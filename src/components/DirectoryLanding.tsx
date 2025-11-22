@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Card } from './ui/card';
 import { KioskHeader } from './KioskHeader';
+import { trackScreenClick } from '../data/supabaseClient';
 
 interface DirectoryLandingProps {
   onNavigate: (view: string, data?: any) => void;
@@ -11,6 +12,16 @@ interface DirectoryLandingProps {
 }
 
 export function DirectoryLanding({ onNavigate, onBack, onHome, onWelcome, canGoBack }: DirectoryLandingProps) {
+  const handleBrowseByFloor = () => {
+    trackScreenClick('Building Directory > Browse by Floor');
+    onNavigate('floor-selection');
+  };
+
+  const handleSearchByName = () => {
+    trackScreenClick('Building Directory > Search by Name');
+    onNavigate('name-search');
+  };
+
   return (
     <div className="size-full bg-gradient-to-br from-[#afa96e]/20 via-white to-[#aca39a]/10 flex flex-col">
       {/* Header */}
@@ -43,7 +54,7 @@ export function DirectoryLanding({ onNavigate, onBack, onHome, onWelcome, canGoB
             transition={{ delay: 0.1 }}
           >
             <Card
-              onClick={() => onNavigate('floor-selection')}
+              onClick={handleBrowseByFloor}
               className="p-8 bg-gradient-to-r from-[#004f71] to-[#00313c] cursor-pointer hover:shadow-2xl transition-all border-0"
             >
               <div className="text-center">
@@ -60,7 +71,7 @@ export function DirectoryLanding({ onNavigate, onBack, onHome, onWelcome, canGoB
             transition={{ delay: 0.2 }}
           >
             <Card
-              onClick={() => onNavigate('name-search')}
+              onClick={handleSearchByName}
               className="p-8 bg-gradient-to-r from-[#789904] to-[#afa96e] cursor-pointer hover:shadow-2xl transition-all border-0"
             >
               <div className="text-center">

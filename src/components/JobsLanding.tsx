@@ -6,6 +6,7 @@ import { Phone, Mail, ExternalLink, QrCode, Briefcase } from 'lucide-react';
 import QRCode from 'qrcode';
 import React from 'react';
 import { getRoomDatabase } from '../data/roomDataLoader';
+import { trackScreenClick } from '../data/supabaseClient';
 
 interface JobsLandingProps {
   onNavigate: (view: string, data?: any) => void;
@@ -77,6 +78,12 @@ export function JobsLanding({ onNavigate, onBack, onHome, onWelcome, canGoBack }
     } catch (error) {
       console.error('Error fetching Room 131 data:', error);
     }
+  };
+
+  // Handle job listings navigation with tracking
+  const handleViewJobOpenings = () => {
+    trackScreenClick('Jobs & Careers > View Current Job Openings');
+    onNavigate('jobs-listings');
   };
 
   return (
@@ -203,7 +210,7 @@ export function JobsLanding({ onNavigate, onBack, onHome, onWelcome, canGoBack }
           className="pt-4"
         >
           <Button
-            onClick={() => onNavigate('jobs-listings')}
+            onClick={handleViewJobOpenings}
             className="w-full h-16 bg-gradient-to-r from-[#004f71] to-[#00313c] text-white hover:from-[#006491] hover:to-[#004f71] shadow-lg"
           >
             <Briefcase className="w-6 h-6 mr-2" />

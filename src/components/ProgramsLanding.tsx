@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Card } from './ui/card';
 import { KioskHeader } from './KioskHeader';
+import { trackScreenClick } from '../data/supabaseClient';
 import busImage from 'figma:asset/010d965bf2fbc0ebdb1d7a035fd06a7883a376ac.png';
 import hostImage from 'figma:asset/235a9c5d4d2c164bc8a9ef6868165af2c8dee60b.png';
 import accImage from 'figma:asset/41a7aaa94efce834f9f65066bfcfdd1e43857ca7.png';
@@ -58,6 +59,24 @@ export function ProgramsLanding({ onNavigate, onBack, onHome, onWelcome, canGoBa
     },
   ];
 
+  // Map program IDs to screen names for analytics
+  const getScreenName = (programId: string) => {
+    const nameMap: Record<string, string> = {
+      'business': 'Programs > Business',
+      'hospitality': 'Programs > Hospitality',
+      'accounting': 'Programs > Accounting',
+      'abit': 'Programs > ABIT',
+    };
+    return nameMap[programId] || `Programs > ${programId}`;
+  };
+
+  const handleProgramClick = (program: any) => {
+    // Track the click
+    trackScreenClick(getScreenName(program.id));
+    // Navigate to the program detail
+    onNavigate('program-detail', program);
+  };
+
   return (
     <div className="size-full bg-gradient-to-br from-[#afa96e]/20 via-white to-[#aca39a]/10 flex flex-col">
       {/* Header */}
@@ -89,7 +108,7 @@ export function ProgramsLanding({ onNavigate, onBack, onHome, onWelcome, canGoBa
               transition={{ delay: index * 0.1, duration: 0.5 }}
             >
               <Card
-                onClick={() => onNavigate('program-detail', program)}
+                onClick={() => handleProgramClick(program)}
                 className="overflow-hidden cursor-pointer hover:shadow-xl transition-all duration-300 bg-white"
               >
                 <div className="flex h-32">

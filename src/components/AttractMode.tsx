@@ -351,9 +351,9 @@ export function AttractMode({ onTouch }: AttractModeProps) {
   if (isLoading) {
     return (
       <div className="size-full flex items-center justify-center bg-gradient-to-br from-[#004f71] to-[#00313c]">
-        <div className="text-center">
-          <div className="text-white text-4xl mb-4">UHMC Ka Lama</div>
-          <div className="text-white text-2xl">Loading...</div>
+        <div className="text-center px-4">
+          <div className="text-white text-2xl md:text-4xl mb-4">UHMC Ka Lama</div>
+          <div className="text-white text-lg md:text-2xl">Loading...</div>
         </div>
       </div>
     );
@@ -362,8 +362,8 @@ export function AttractMode({ onTouch }: AttractModeProps) {
   if (slides.length === 0) {
     return (
       <div className="size-full flex items-center justify-center bg-gradient-to-br from-[#004f71] to-[#00313c]">
-        <div className="text-center text-white">
-          <p className="text-3xl">No content available</p>
+        <div className="text-center text-white px-4">
+          <p className="text-xl md:text-3xl">No content available</p>
         </div>
       </div>
     );
@@ -423,12 +423,12 @@ function StaticSlideContent({ slide }: { slide: StaticSlide }) {
       <div className={`absolute inset-0 bg-gradient-to-br ${slide.gradientColors}`} />
 
       {/* Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-8 text-center">
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-4 md:px-8 text-center">
         <motion.h1
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-4xl text-white mb-6 max-w-md leading-tight whitespace-pre-line"
+          className="text-2xl md:text-4xl text-white mb-4 md:mb-6 max-w-md leading-tight whitespace-pre-line"
         >
           {slide.title}
         </motion.h1>
@@ -437,7 +437,7 @@ function StaticSlideContent({ slide }: { slide: StaticSlide }) {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="text-2xl text-white/90 mb-8"
+          className="text-base md:text-2xl text-white/90 mb-6 md:mb-8 px-2"
         >
           {slide.subtitle}
         </motion.p>
@@ -448,7 +448,7 @@ function StaticSlideContent({ slide }: { slide: StaticSlide }) {
         <motion.div
           animate={{ scale: [1, 1.1, 1] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className={`absolute left-1/2 transform -translate-x-1/2 text-xl text-white/80 z-20 ${
+          className={`absolute left-1/2 transform -translate-x-1/2 text-base md:text-xl text-white/80 z-20 ${
             slide.id === 'inspiration' ? 'top-8' : 'bottom-16'
           }`}
         >

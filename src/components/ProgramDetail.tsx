@@ -262,13 +262,13 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
             </Card>
 
             {/* Top Careers & Salaries */}
-            <Card className="p-4 md:p-8 mb-6 bg-white">
-              <h3 className="text-xl md:text-3xl text-slate-900 mb-4">TOP CAREERS & SALARIES</h3>
+            <Card className="p-8 mb-6 bg-white">
+              <h3 className="text-3xl text-slate-900 mb-4">TOP CAREERS & SALARIES</h3>
               <div className="space-y-3">
                 {details.topCareers.map((career: any, index: number) => (
-                  <div key={index} className="p-3 md:p-5 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg flex justify-between items-center gap-2">
-                    <h4 className="text-sm md:text-xl text-slate-900 break-words">{career.title}</h4>
-                    <p className="text-sm md:text-2xl text-emerald-700 flex-shrink-0">{career.salary}</p>
+                  <div key={index} className="p-5 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg flex justify-between items-center">
+                    <h4 className="text-xl text-slate-900 break-words">{career.title}</h4>
+                    <p className="text-2xl text-emerald-700 flex-shrink-0 ml-4">{career.salary}</p>
                   </div>
                 ))}
               </div>

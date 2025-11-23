@@ -126,9 +126,9 @@ export default function App() {
   const canGoBack = viewStack.length > 1;
 
   return (
-    <div className="min-h-screen bg-slate-100 flex items-center justify-center md:p-4">
-      {/* Kiosk Container - Responsive: full screen on mobile, 540x960 on desktop/kiosk */}
-      <div className="relative bg-white w-full h-screen md:w-[540px] md:h-[960px] md:shadow-2xl" style={{ overflow: 'hidden' }}>
+    <div className="min-h-screen bg-slate-100 flex items-center justify-center p-4">
+      {/* Kiosk Container - 4K Portrait (9:16 aspect ratio, scaled to 540x960) */}
+      <div className="relative bg-white shadow-2xl" style={{ width: '540px', height: '960px', overflow: 'hidden' }}>
         {currentView.view === 'attract' && <AttractMode onTouch={() => navigate('menu')} />}
         {currentView.view === 'menu' && <MainMenu onNavigate={navigate} onWelcome={goToAttract} />}
         {currentView.view === 'programs' && <ProgramsLanding onNavigate={navigate} onBack={goBack} onHome={goHome} onWelcome={goToAttract} canGoBack={canGoBack} />}

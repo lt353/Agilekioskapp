@@ -126,9 +126,9 @@ export default function App() {
   const canGoBack = viewStack.length > 1;
 
   return (
-    <div className="min-h-screen bg-slate-100 flex items-center justify-center p-4">
-      {/* Kiosk Container - 4K Portrait (9:16 aspect ratio, scaled to 540x960) */}
-      <div className="relative bg-white shadow-2xl" style={{ width: '540px', height: '960px', overflow: 'hidden' }}>
+    <div className="min-h-screen bg-slate-100 flex items-center justify-center md:p-4">
+      {/* Kiosk Container - Responsive: Full screen on mobile, fixed 540x960 for kiosk (4K portrait scaled) */}
+      <div className="relative bg-white w-full h-screen md:w-[540px] md:h-[960px] md:shadow-2xl overflow-hidden" style={{ maxWidth: '100vw', maxHeight: '100vh' }}>
         {currentView.view === 'attract' && <AttractMode onTouch={() => navigate('menu')} />}
         {currentView.view === 'menu' && <MainMenu onNavigate={navigate} onWelcome={goToAttract} />}
         {currentView.view === 'programs' && <ProgramsLanding onNavigate={navigate} onBack={goBack} onHome={goHome} onWelcome={goToAttract} canGoBack={canGoBack} />}
@@ -154,8 +154,8 @@ export default function App() {
         {/* Inactivity Warning */}
         {showInactivityWarning && (
           <div className="absolute inset-0 bg-black/70 flex items-center justify-center z-50 pointer-events-none">
-            <div className="bg-gradient-to-r from-[#e63f51] to-[#dd8a03] rounded-2xl p-8 shadow-2xl animate-pulse mx-4 border-4 border-white">
-              <p className="text-2xl text-white text-center">Returning to welcome screen in 15 seconds...</p>
+            <div className="bg-gradient-to-r from-[#e63f51] to-[#dd8a03] rounded-2xl p-4 md:p-8 shadow-2xl animate-pulse mx-4 border-4 border-white">
+              <p className="text-base md:text-2xl text-white text-center">Returning to welcome screen in 15 seconds...</p>
             </div>
           </div>
         )}

@@ -1,7 +1,8 @@
 
-  # Current App
+  # Agile Kiosk App
 
-  This is a code bundle for Current App. The original project is available at https://www.figma.com/design/pC9RBVbDCNx1QZ6oPOOZvw/Current-App.
+  This is a code bundle for our Agile Kiosk App project for ICS318. 
+  You can access the website at https://lt353.github.io/Agilekioskapp/ 
 
   ## Running the code
 

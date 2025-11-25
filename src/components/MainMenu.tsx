@@ -31,27 +31,6 @@ export function MainMenu({ onNavigate, onWelcome }: MainMenuProps) {
       hoverColor: 'hover:from-[#006491] hover:to-[#004f71]',
       active: true,
     },
-    {
-      id: 'survey-intro',
-      title: 'CAMPUS SURVEY',
-      color: 'from-slate-400 to-slate-500',
-      hoverColor: '',
-      active: false,
-    },
-    {
-      id: 'events',
-      title: 'EVENTS',
-      color: 'from-slate-400 to-slate-500',
-      hoverColor: '',
-      active: false,
-    },
-    {
-      id: 'website',
-      title: 'UHMC WEBSITE',
-      color: 'from-slate-400 to-slate-500',
-      hoverColor: '',
-      active: false,
-    },
   ];
 
   return (

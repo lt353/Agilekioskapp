@@ -2,10 +2,10 @@ import { motion } from 'motion/react';
 import { Card } from './ui/card';
 import { KioskHeader } from './KioskHeader';
 import { trackScreenClick } from '../data/supabaseClient';
-import busImage from 'figma:asset/010d965bf2fbc0ebdb1d7a035fd06a7883a376ac.png';
-import hostImage from 'figma:asset/235a9c5d4d2c164bc8a9ef6868165af2c8dee60b.png';
-import accImage from 'figma:asset/41a7aaa94efce834f9f65066bfcfdd1e43857ca7.png';
-import abitImage from 'figma:asset/3d141f04829f90de275d3a7e323c07792162069f.png';
+import busImage from 'figma:asset/business-program.png';
+import hostImage from 'figma:asset/hospitality-program.png';
+import accImage from 'figma:asset/accounting-program.png';
+import abitImage from 'figma:asset/abit-program.png';
 
 interface ProgramsLandingProps {
   onNavigate: (view: string, data?: any) => void;

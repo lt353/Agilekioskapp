@@ -5,8 +5,8 @@ import { KioskHeader } from './KioskHeader';
 import { getRoomColor } from '../data/roomData';
 import { useState, useEffect, useRef } from 'react';
 import { getRoomDatabase } from '../data/roomDataLoader';
-import floor1Image from "figma:asset/55a4e16928950039c9d966eb374cf92c3359bb03.png";
-import floor2Image from "figma:asset/ce34bbc7916da202b5c59759323925e07ec34292.png";
+import floor1Image from "figma:asset/floor-1-map.png";
+import floor2Image from "figma:asset/floor-2-map.png";
 import { MapPin } from 'lucide-react';
 
 interface RoomDetailProps {

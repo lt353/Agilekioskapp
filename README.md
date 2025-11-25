@@ -107,51 +107,14 @@ The Supabase keys in `src/data/supabaseClient.ts` are **meant to be public**:
 
 3. **Client-side apps can't hide secrets:** Since this runs in a browser, any "secret" key would be visible in the bundled JavaScript anyway.
 
-### ⚠️ IMPORTANT: RLS Configuration
+### ✅ Row Level Security (RLS) Configuration
 
-**Current Status:** Your `job_openings` and `screen_analytics` tables have RLS **disabled** (unrestricted access).
+**Status:** RLS is properly configured with policies that allow:
+- Anonymous users can **read** active content (rooms, jobs, programs, attract_content)
+- Anonymous users can **write** to screen_analytics (usage tracking)
+- Only authenticated users can modify data
 
-**This means:**
-- ✅ **Read access:** Anyone with the URL can read job listings (this is probably fine for a public kiosk)
-- ⚠️ **Write access:** Anyone could potentially insert fake data or modify records
-
-**Recommended RLS Policies:**
-
-For **`job_openings`** table:
-```sql
--- Allow public read access
-CREATE POLICY "Anyone can read job openings"
-ON job_openings FOR SELECT
-TO public
-USING (active = true);
-
--- Only authenticated users can insert/update (protects your data)
-CREATE POLICY "Only authenticated users can modify jobs"
-ON job_openings FOR ALL
-TO authenticated
-USING (true);
-```
-
-For **`screen_analytics`** table:
-```sql
--- Allow public insert (so kiosk can track clicks)
-CREATE POLICY "Anyone can insert analytics"
-ON screen_analytics FOR INSERT
-TO public
-WITH CHECK (true);
-
--- Allow public update (so kiosk can increment counters)
-CREATE POLICY "Anyone can update analytics"
-ON screen_analytics FOR UPDATE
-TO public
-USING (true);
-
--- Only authenticated users can read/delete
-CREATE POLICY "Only authenticated users can read analytics"
-ON screen_analytics FOR SELECT
-TO authenticated
-USING (true);
-```
+This ensures the kiosk functions properly while protecting against unauthorized data modification.
 
 ### What is .gitignore?
 
@@ -181,6 +144,7 @@ Agilekioskapp/
 │   │   ├── AttractMode.tsx
 │   │   ├── MainMenu.tsx
 │   │   └── ...
+│   ├── constants/        # Timeout and configuration constants
 │   ├── data/             # Data loaders and Supabase client
 │   ├── imports/          # Legacy Figma exports (reference only)
 │   ├── guidelines/       # Design and setup documentation
@@ -235,7 +199,7 @@ npm install
 
 ## Credits
 
-**Course:** ICS 318 - Agile Software Development
+**Course:** ICS 418 - Agile Software Development
 **Institution:** University of Hawaiʻi Maui College
 **Department:** Business Department, Ka Lama Building
 **Team:** LT353

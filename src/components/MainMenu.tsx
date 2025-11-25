@@ -65,7 +65,7 @@ export function MainMenu({ onNavigate, onWelcome }: MainMenuProps) {
 
       {/* Menu Grid */}
       <div className="flex-1 px-8 py-8 flex flex-col justify-center">
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-6 max-w-2xl mx-auto w-full">
           {menuItems.map((item, index) => (
             <motion.div
               key={item.id}
@@ -75,10 +75,10 @@ export function MainMenu({ onNavigate, onWelcome }: MainMenuProps) {
             >
               <Card
                 onClick={() => item.active && onNavigate(item.id)}
-                className={`h-48 bg-gradient-to-br ${item.color} ${item.active ? item.hoverColor + ' cursor-pointer hover:scale-105' : 'cursor-not-allowed opacity-75'} transition-all duration-300 hover:shadow-2xl border-none overflow-hidden group`}
+                className={`h-56 bg-gradient-to-br ${item.color} ${item.active ? item.hoverColor + ' cursor-pointer hover:scale-105' : 'cursor-not-allowed opacity-75'} transition-all duration-300 hover:shadow-2xl border-none overflow-hidden group`}
               >
                 <div className="h-full flex flex-col items-center justify-center text-white p-6">
-                  <h2 className="text-2xl text-center mb-2">{item.title}</h2>
+                  <h2 className="text-3xl text-center font-semibold">{item.title}</h2>
                   {!item.active && (
                     <p className="text-base text-white/80 mt-2">Future Feature</p>
                   )}

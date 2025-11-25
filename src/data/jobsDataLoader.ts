@@ -39,8 +39,6 @@ export async function getJobListings(): Promise<JobListing[]> {
         await testSupabaseConnection();
       }
 
-      console.log('🔄 Fetching job listings from Supabase... (timestamp:', new Date().toISOString(), ')');
-      
       const { data, error, status, statusText } = await supabase
         .from('job_openings')
         .select('*')
@@ -68,8 +66,6 @@ export async function getJobListings(): Promise<JobListing[]> {
         return localJobListings;
       }
 
-      console.log('✅ Successfully fetched', data.length, 'job listings from Supabase');
-      
       // Transform the data to match our JobListing interface
       const jobListings: JobListing[] = data.map((job: any) => ({
         id: job.id.toString(),
@@ -126,7 +122,6 @@ export async function getJobById(id: string): Promise<JobListing | null> {
 export function clearJobListingsCache(): void {
   cachedJobListings = null;
   fetchPromise = null;
-  console.log('🗑️ Job listings cache cleared');
 }
 
 /**

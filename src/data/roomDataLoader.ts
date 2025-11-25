@@ -39,41 +39,12 @@ export async function getRoomDatabase(): Promise<Record<string, RoomData>> {
         await testSupabaseConnection();
       }
 
-      console.log('🔄 Fetching rooms from Supabase... (timestamp:', new Date().toISOString(), ')');
-      
       // Note: Adding a timestamp to ensure we're not getting cached data
       const { data, error, status, statusText } = await supabase
         .from('rooms')
         .select('*')
         .eq('active', true)
         .order('number', { ascending: true });
-      
-      console.log('Rooms response:', { 
-        dataCount: data?.length, 
-        error: error ? JSON.stringify(error, null, 2) : null, 
-        status, 
-        statusText 
-      });
-      
-      if (data && data.length > 0) {
-        console.log('📊 First 3 rooms from Supabase:');
-        data.slice(0, 3).forEach(room => {
-          console.log(`  - Room ${room.number}: ${room.name}`);
-        });
-        
-        // Show ALL room numbers to help debug
-        const allRoomNumbers = data.map(r => r.number).sort();
-        console.log('🔢 All room numbers in Supabase:', allRoomNumbers);
-        
-        // Check specifically for room101 to help debug
-        const room101 = data.find(r => r.number === '101');
-        if (room101) {
-          console.log('🔍 Room 101 found:', room101);
-        } else {
-          console.warn('⚠️ Room 101 NOT FOUND in Supabase data');
-          console.log('💡 Check: Does room 101 exist in your table? Is active=true?');
-        }
-      }
 
       if (error) {
         // Handle missing table or other errors gracefully
@@ -92,7 +63,6 @@ export async function getRoomDatabase(): Promise<Record<string, RoomData>> {
 
       if (!data || data.length === 0) {
         console.warn('⚠️ No room data in Supabase (or all rooms have active=false) - using local room data');
-        console.log('💡 TIP: Check that your rooms table has data and that the "active" column is set to true');
         cachedRoomData = localRoomDatabase;
         return localRoomDatabase;
       }
@@ -116,7 +86,6 @@ export async function getRoomDatabase(): Promise<Record<string, RoomData>> {
         };
       });
 
-      console.log(`✅ Successfully loaded ${data.length} rooms from Supabase`);
       cachedRoomData = transformedRooms;
       return transformedRooms;
     } catch (error) {

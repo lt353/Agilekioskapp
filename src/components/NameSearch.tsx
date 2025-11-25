@@ -4,6 +4,7 @@ import { Input } from './ui/input';
 import { KioskHeader } from './KioskHeader';
 import { useState, useEffect } from 'react';
 import { getRoomDatabase } from '../data/roomDataLoader';
+import { KEYBOARD_KEY_PRESS_DURATION } from '../constants/timeouts';
 
 interface NameSearchProps {
   onNavigate: (view: string, data?: any) => void;
@@ -59,7 +60,7 @@ export function NameSearch({ onNavigate, onBack, onHome, onWelcome, canGoBack }:
 
   const handleKeyPress = (key: string) => {
     setPressedKey(key);
-    setTimeout(() => setPressedKey(null), 150);
+    setTimeout(() => setPressedKey(null), KEYBOARD_KEY_PRESS_DURATION);
     
     if (key === '⌫') {
       setSearchQuery((prev) => prev.slice(0, -1));
@@ -70,13 +71,13 @@ export function NameSearch({ onNavigate, onBack, onHome, onWelcome, canGoBack }:
 
   const handleClear = () => {
     setPressedKey('Clear');
-    setTimeout(() => setPressedKey(null), 150);
+    setTimeout(() => setPressedKey(null), KEYBOARD_KEY_PRESS_DURATION);
     setSearchQuery('');
   };
 
   const handleSpace = () => {
     setPressedKey('Space');
-    setTimeout(() => setPressedKey(null), 150);
+    setTimeout(() => setPressedKey(null), KEYBOARD_KEY_PRESS_DURATION);
     setSearchQuery((prev) => prev + ' ');
   };
 

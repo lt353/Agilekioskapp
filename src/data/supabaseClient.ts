@@ -14,7 +14,6 @@ export function getSupabaseClient() {
   
   if (supabaseUrl && supabaseAnonKey) {
     supabase = createClient(supabaseUrl, supabaseAnonKey);
-    console.log('✅ Supabase client created:', supabaseUrl);
     return supabase;
   }
   
@@ -31,19 +30,15 @@ export async function testSupabaseConnection() {
   }
 
   try {
-    console.log('🔄 Testing connection to rooms table...');
     const { data, error, status, statusText } = await client
       .from('rooms')
       .select('*', { count: 'exact', head: true });
-
-    console.log('Response:', { data, error, status, statusText });
 
     if (error) {
       console.error('❌ Error:', JSON.stringify(error, null, 2));
       return false;
     }
 
-    console.log('✅ Connection successful!');
     return true;
   } catch (err) {
     console.error('❌ Exception:', err);
@@ -85,8 +80,6 @@ export async function trackScreenClick(screenName: string) {
 
       if (updateError) {
         console.error('❌ Error updating analytics:', updateError);
-      } else {
-        console.log(`📊 Tracked click for "${screenName}" (total: ${existing.click_count + 1})`);
       }
     } else {
       // Insert new record
@@ -101,8 +94,6 @@ export async function trackScreenClick(screenName: string) {
 
       if (insertError) {
         console.error('❌ Error inserting analytics:', insertError);
-      } else {
-        console.log(`📊 Tracked first click for "${screenName}"`);
       }
     }
   } catch (err) {

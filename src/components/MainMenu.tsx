@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
-import logoSquare from 'figma:asset/5fca0ebf16a2ce2bc8333471a1e56eff5fa8f1ac.png';
+import logoSquare from 'figma:asset/uhmc-logo-square.png';
 
 interface MainMenuProps {
   onNavigate: (view: string, data?: any) => void;

@@ -3,14 +3,14 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { DynamicContentSlide, DynamicContent } from './DynamicContentSlide';
 import { getSupabaseClient } from '../data/supabaseClient';
-import kaLamaBuilding from 'figma:asset/84e9d3a747bc7799c3c4dbf8e98c50cfc6257e06.png';
-import busImage from 'figma:asset/010d965bf2fbc0ebdb1d7a035fd06a7883a376ac.png';
-import hostImage from 'figma:asset/235a9c5d4d2c164bc8a9ef6868165af2c8dee60b.png';
-import accImage from 'figma:asset/41a7aaa94efce834f9f65066bfcfdd1e43857ca7.png';
-import abitImage from 'figma:asset/3d141f04829f90de275d3a7e323c07792162069f.png';
-import learnGrowImage from 'figma:asset/8463ce02cc2e0c8da36dcc35ba2420bff340c70f.png';
-import fourProgramsImage from 'figma:asset/c9821e56eb877b74e86fd5f19d8f7354dfe8ab44.png';
-import whatsInsideImage from 'figma:asset/ef851cd1dc697e24c70be0fe4fb92334a1fda7a5.png';
+import kaLamaBuilding from 'figma:asset/ka-lama-building.png';
+import busImage from 'figma:asset/business-program.png';
+import hostImage from 'figma:asset/hospitality-program.png';
+import accImage from 'figma:asset/accounting-program.png';
+import abitImage from 'figma:asset/abit-program.png';
+import learnGrowImage from 'figma:asset/learn-grow-thrive.png';
+import fourProgramsImage from 'figma:asset/four-programs.png';
+import whatsInsideImage from 'figma:asset/whats-inside.png';
 
 interface AttractModeProps {
   onTouch: () => void;

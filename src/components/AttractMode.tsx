@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { DynamicContentSlide, DynamicContent } from './DynamicContentSlide';
 import { getSupabaseClient } from '../data/supabaseClient';
+import { ATTRACT_CONTENT_REFRESH_INTERVAL, ATTRACT_SLIDE_DURATION } from '../constants/timeouts';
 import kaLamaBuilding from 'figma:asset/ka-lama-building.png';
 import busImage from 'figma:asset/business-program.png';
 import hostImage from 'figma:asset/hospitality-program.png';
@@ -229,23 +230,11 @@ export function AttractMode({ onTouch }: AttractModeProps) {
           return;
         }
 
-        console.log('🔄 Fetching attract_content from Supabase...');
         const { data, error, status, statusText } = await supabase
           .from('attract_content')
           .select('*')
           .eq('active', true)
           .order('display_order', { ascending: true });
-        
-        console.log('Attract content response:', { 
-          dataCount: data?.length, 
-          error: error ? JSON.stringify(error, null, 2) : null, 
-          status, 
-          statusText 
-        });
-        
-        if (data && data.length > 0) {
-          console.log('📊 Attract content data:', data);
-        }
 
         if (error) {
           // Handle missing table or other errors gracefully
@@ -270,11 +259,9 @@ export function AttractMode({ onTouch }: AttractModeProps) {
         
         if (dynamicContent.length === 0) {
           console.warn('⚠️ No attract_content data in Supabase (or all content has active=false) - using mock data');
-          console.log('💡 TIP: Check that your attract_content table has data and that the "active" column is set to true');
           const mixedSlides = mixSlides(staticSlides, mockDynamicContent);
           setSlides(mixedSlides);
         } else {
-          console.log(`✅ Successfully loaded ${dynamicContent.length} attract content items from Supabase`);
           const mixedSlides = mixSlides(staticSlides, dynamicContent);
           setSlides(mixedSlides);
         }
@@ -293,9 +280,8 @@ export function AttractMode({ onTouch }: AttractModeProps) {
     
     // Refresh content every 5 minutes to pick up changes
     const intervalId = setInterval(() => {
-      console.log('🔄 Auto-refreshing attract content...');
       fetchDynamicContent();
-    }, 5 * 60 * 1000); // 5 minutes
+    }, ATTRACT_CONTENT_REFRESH_INTERVAL);
     
     return () => clearInterval(intervalId);
   }, []);
@@ -343,7 +329,7 @@ export function AttractMode({ onTouch }: AttractModeProps) {
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 10000); // 10 seconds per slide for reading and QR scanning
+    }, ATTRACT_SLIDE_DURATION);
 
     return () => clearInterval(interval);
   }, [slides.length]);
@@ -374,6 +360,7 @@ export function AttractMode({ onTouch }: AttractModeProps) {
   return (
     <div
       onClick={onTouch}
+      onTouchStart={onTouch}
       className="size-full cursor-pointer relative overflow-hidden"
     >
       <AnimatePresence mode="wait">

@@ -9,6 +9,7 @@ import {
   type RoomData,
 } from "../data/roomData";
 import { getRoomDatabase } from "../data/roomDataLoader";
+import { FLOOR_MAP_SCALE_DELAY } from "../constants/timeouts";
 import floor1Image from "figma:asset/floor-1-map.png";
 import floor2Image from "figma:asset/floor-2-map.png";
 
@@ -158,7 +159,7 @@ export function FloorMap({
     };
 
     // Scale on mount and when floor changes
-    const timer = setTimeout(scaleCoordinates, 100);
+    const timer = setTimeout(scaleCoordinates, FLOOR_MAP_SCALE_DELAY);
     return () => clearTimeout(timer);
   }, [currentFloor, areas]);
 

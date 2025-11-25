@@ -15,6 +15,11 @@ import { JobsLanding } from './components/JobsLanding';
 import { JobsListings } from './components/JobsListings';
 import { JobDetail } from './components/JobDetail';
 import { clearRoomCache } from './data/roomDataLoader';
+import {
+  INACTIVITY_WARNING_TIMEOUT,
+  INACTIVITY_RETURN_TIMEOUT,
+  INACTIVITY_CHECK_INTERVAL
+} from './constants/timeouts';
 
 type ViewType = 
   | 'attract' 
@@ -47,7 +52,6 @@ export default function App() {
 
   // Clear room cache on app mount to ensure fresh data
   useEffect(() => {
-    console.log('🔄 App mounted - clearing room cache to fetch fresh data');
     clearRoomCache();
   }, []);
 
@@ -64,18 +68,18 @@ export default function App() {
 
     const interval = setInterval(() => {
       const idleTime = Date.now() - lastInteraction;
-      
-      // Show warning at 2 minutes (120 seconds)
-      if (idleTime > 120000 && idleTime < 135000 && currentView.view !== 'attract') {
+
+      // Show warning at 2 minutes
+      if (idleTime > INACTIVITY_WARNING_TIMEOUT && idleTime < INACTIVITY_RETURN_TIMEOUT && currentView.view !== 'attract') {
         setShowInactivityWarning(true);
       }
-      
-      // Return to attract at 2 minutes 15 seconds (135 seconds)
-      if (idleTime > 135000 && currentView.view !== 'attract') {
+
+      // Return to attract at 2 minutes 15 seconds
+      if (idleTime > INACTIVITY_RETURN_TIMEOUT && currentView.view !== 'attract') {
         setViewStack([{ view: 'attract' }]);
         setShowInactivityWarning(false);
       }
-    }, 1000);
+    }, INACTIVITY_CHECK_INTERVAL);
 
     return () => {
       window.removeEventListener('click', handleInteraction);

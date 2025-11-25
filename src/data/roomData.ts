@@ -467,30 +467,6 @@ export function getRoomHoverColor(type: string): string {
   return colors[type] || colors['office'];
 }
 
-// Helper function to get rooms grouped by category for list view
-export function getRoomsByFloorAndCategory(floor: 1 | 2): Record<string, RoomData[]> {
-  const floorRooms = Object.values(roomDatabase).filter(room => room.floor === floor);
-  const grouped: Record<string, RoomData[]> = {};
-
-  floorRooms.forEach(room => {
-    const category = room.category || 'Other';
-    if (!grouped[category]) {
-      grouped[category] = [];
-    }
-    grouped[category].push(room);
-  });
-
-  // Sort rooms within each category by room number
-  Object.keys(grouped).forEach(category => {
-    grouped[category].sort((a, b) => {
-      const numA = parseInt(a.number.replace(/[^0-9]/g, ''));
-      const numB = parseInt(b.number.replace(/[^0-9]/g, ''));
-      return numA - numB;
-    });
-  });
-
-  return grouped;
-}
 
 // Get category color for list view
 export function getCategoryColor(category: string): { border: string; bg: string; text: string } {

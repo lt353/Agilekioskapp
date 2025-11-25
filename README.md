@@ -202,7 +202,7 @@ npm install
 **Course:** ICS 418 - Agile Software Development
 **Institution:** University of Hawaiʻi Maui College
 **Department:** Business Department, Ka Lama Building
-**Team:** LT353
+**Team:** Lindsay, DJ, Macy & Yafei
 
 ## License
 

@@ -27,8 +27,8 @@ export function MainMenu({ onNavigate, onWelcome }: MainMenuProps) {
     {
       id: 'jobs',
       title: 'JOBS & CAREERS',
-      color: 'from-[#004f71] to-[#00313c]',
-      hoverColor: 'hover:from-[#006491] hover:to-[#004f71]',
+      color: 'from-[#dd8a03] to-[#e63f51]',
+      hoverColor: 'hover:from-[#ffb600] hover:to-[#ff5a6e]',
       active: true,
     },
   ];
@@ -65,7 +65,7 @@ export function MainMenu({ onNavigate, onWelcome }: MainMenuProps) {
 
       {/* Menu Grid */}
       <div className="flex-1 px-8 py-8 flex flex-col justify-center">
-        <div className="grid grid-cols-1 gap-6 max-w-2xl mx-auto w-full">
+        <div className="grid grid-cols-1 gap-8 max-w-2xl mx-auto w-full">
           {menuItems.map((item, index) => (
             <motion.div
               key={item.id}
@@ -75,10 +75,10 @@ export function MainMenu({ onNavigate, onWelcome }: MainMenuProps) {
             >
               <Card
                 onClick={() => item.active && onNavigate(item.id)}
-                className={`h-56 bg-gradient-to-br ${item.color} ${item.active ? item.hoverColor + ' cursor-pointer hover:scale-105' : 'cursor-not-allowed opacity-75'} transition-all duration-300 hover:shadow-2xl border-none overflow-hidden group`}
+                className={`h-[140px] bg-gradient-to-br ${item.color} ${item.active ? item.hoverColor + ' cursor-pointer hover:scale-105' : 'cursor-not-allowed opacity-75'} transition-all duration-300 hover:shadow-2xl border-none overflow-hidden group`}
               >
                 <div className="h-full flex flex-col items-center justify-center text-white p-6">
-                  <h2 className="text-3xl text-center font-semibold">{item.title}</h2>
+                  <h2 className="text-4xl text-center font-semibold">{item.title}</h2>
                   {!item.active && (
                     <p className="text-base text-white/80 mt-2">Future Feature</p>
                   )}
@@ -87,19 +87,19 @@ export function MainMenu({ onNavigate, onWelcome }: MainMenuProps) {
             </motion.div>
           ))}
         </div>
-
-        {/* Footer Info */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="mt-8 text-center"
-        >
-          <p className="text-base" style={{ color: 'var(--uhmc-dark-gray)' }}>
-            This screen will automatically return to the welcome screen after 60 seconds of inactivity
-          </p>
-        </motion.div>
       </div>
+
+      {/* Footer Info - Fixed at Bottom */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.8 }}
+        className="px-8 pb-6 text-center"
+      >
+        <p className="text-base" style={{ color: 'var(--uhmc-dark-gray)' }}>
+          This screen will automatically return to the welcome screen after 60 seconds of inactivity
+        </p>
+      </motion.div>
     </div>
   );
 }

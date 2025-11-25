@@ -14,12 +14,6 @@ import { SearchResults } from './components/SearchResults';
 import { JobsLanding } from './components/JobsLanding';
 import { JobsListings } from './components/JobsListings';
 import { JobDetail } from './components/JobDetail';
-import { SurveyIntro } from './components/SurveyIntro';
-import { SurveyQuestion } from './components/SurveyQuestion';
-import { SurveyThankYou } from './components/SurveyThankYou';
-import { EventsLanding } from './components/EventsLanding';
-import { EventDetail } from './components/EventDetail';
-import { WebsiteBrowser } from './components/WebsiteBrowser';
 import { clearRoomCache } from './data/roomDataLoader';
 
 type ViewType = 
@@ -35,15 +29,9 @@ type ViewType =
   | 'room-detail'
   | 'name-search'
   | 'search-results'
-  | 'jobs' 
+  | 'jobs'
   | 'jobs-listings'
-  | 'job-detail'
-  | 'survey-intro'
-  | 'survey-question'
-  | 'survey-thanks'
-  | 'events'
-  | 'event-detail'
-  | 'website';
+  | 'job-detail';
 
 interface ViewState {
   view: ViewType;
@@ -144,12 +132,6 @@ export default function App() {
         {currentView.view === 'jobs' && <JobsLanding onNavigate={navigate} onBack={goBack} onHome={goHome} onWelcome={goToAttract} canGoBack={canGoBack} />}
         {currentView.view === 'jobs-listings' && <JobsListings onNavigate={navigate} onBack={goBack} onHome={goHome} onWelcome={goToAttract} canGoBack={canGoBack} />}
         {currentView.view === 'job-detail' && <JobDetail job={currentView.data} onBack={goBack} onHome={goHome} onWelcome={goToAttract} canGoBack={canGoBack} />}
-        {currentView.view === 'survey-intro' && <SurveyIntro onNavigate={navigate} onBack={goBack} onHome={goHome} onWelcome={goToAttract} canGoBack={canGoBack} />}
-        {currentView.view === 'survey-question' && <SurveyQuestion onNavigate={navigate} onBack={goBack} onHome={goHome} onWelcome={goToAttract} />}
-        {currentView.view === 'survey-thanks' && <SurveyThankYou onNavigate={navigate} onHome={goHome} onWelcome={goToAttract} />}
-        {currentView.view === 'events' && <EventsLanding onNavigate={navigate} onBack={goBack} onHome={goHome} onWelcome={goToAttract} canGoBack={canGoBack} />}
-        {currentView.view === 'event-detail' && <EventDetail event={currentView.data} onBack={goBack} onHome={goHome} onWelcome={goToAttract} canGoBack={canGoBack} />}
-        {currentView.view === 'website' && <WebsiteBrowser onBack={goBack} onHome={goHome} onWelcome={goToAttract} canGoBack={canGoBack} />}
 
         {/* Inactivity Warning */}
         {showInactivityWarning && (

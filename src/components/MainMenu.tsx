@@ -27,8 +27,8 @@ export function MainMenu({ onNavigate, onWelcome }: MainMenuProps) {
     {
       id: 'jobs',
       title: 'JOBS & CAREERS',
-      color: 'from-[#dd8a03] to-[#e63f51]',
-      hoverColor: 'hover:from-[#ffb600] hover:to-[#ff5a6e]',
+      color: 'from-[#dd8a03] to-[#c72e41]',
+      hoverColor: 'hover:from-[#ffb600] hover:to-[#e63f51]',
       active: true,
     },
   ];
@@ -75,7 +75,7 @@ export function MainMenu({ onNavigate, onWelcome }: MainMenuProps) {
             >
               <Card
                 onClick={() => item.active && onNavigate(item.id)}
-                className={`h-[140px] bg-gradient-to-br ${item.color} ${item.active ? item.hoverColor + ' cursor-pointer hover:scale-105' : 'cursor-not-allowed opacity-75'} transition-all duration-300 hover:shadow-2xl border-none overflow-hidden group`}
+                className={`h-[180px] bg-gradient-to-br ${item.color} ${item.active ? item.hoverColor + ' cursor-pointer hover:scale-105' : 'cursor-not-allowed opacity-75'} transition-all duration-300 hover:shadow-2xl border-none overflow-hidden group`}
               >
                 <div className="h-full flex flex-col items-center justify-center text-white p-6">
                   <h2 className="text-4xl text-center font-semibold">{item.title}</h2>

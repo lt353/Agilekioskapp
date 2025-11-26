@@ -27,8 +27,8 @@ export function MainMenu({ onNavigate, onWelcome }: MainMenuProps) {
     {
       id: 'jobs',
       title: 'JOBS & CAREERS',
-      color: 'from-[#dd8a03] to-[#e63f51]',
-      hoverColor: 'hover:from-[#ffb600] hover:to-[#ff5a6e]',
+      color: 'from-[#dd8a03] to-[#c72e41]',
+      hoverColor: 'hover:from-[#ffb600] hover:to-[#e63f51]',
       active: true,
     },
   ];

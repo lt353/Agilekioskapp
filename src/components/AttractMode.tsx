@@ -431,9 +431,10 @@ export function AttractMode({ onTouch }: AttractModeProps) {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 z-10" style={{
         position: 'absolute',
         bottom: '32px',
-        left: '50%',
-        transform: 'translateX(-50%)',
+        left: '0',
+        right: '0',
         display: 'flex',
+        justifyContent: 'center',
         gap: '8px',
         zIndex: 10
       }}>

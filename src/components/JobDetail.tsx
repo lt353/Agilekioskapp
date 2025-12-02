@@ -18,7 +18,14 @@ interface JobDetailProps {
 export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDetailProps) {
 
   return (
-    <div className="size-full bg-gradient-to-br from-[#f5f4f2] via-white to-[#f5f4f2] flex flex-col overflow-hidden">
+    <div className="size-full bg-gradient-to-br from-[#f5f4f2] via-white to-[#f5f4f2] flex flex-col overflow-hidden" style={{
+      width: '100%',
+      height: '100%',
+      background: 'linear-gradient(to bottom right, #f5f4f2, white, #f5f4f2)',
+      display: 'flex',
+      flexDirection: 'column',
+      overflow: 'hidden'
+    }}>
       {/* Header */}
       <KioskHeader
         title="JOB DETAILS"
@@ -29,51 +36,144 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
       />
 
       {/* Content - Scrollable */}
-      <div className="flex-1 overflow-y-auto">
-        <div className="px-6 py-6 space-y-4">
+      <div className="flex-1 overflow-y-auto" style={{
+        flex: '1',
+        overflowY: 'auto'
+      }}>
+        <div className="px-6 py-6 space-y-4" style={{
+          paddingLeft: '24px',
+          paddingRight: '24px',
+          paddingTop: '24px',
+          paddingBottom: '24px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '16px'
+        }}>
           {/* Job Title Card */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
           >
-            <Card className="p-5 bg-gradient-to-r from-[#004f71] to-[#00313c] text-white border-none shadow-lg">
-              <h1 className="text-2xl mb-3">{job.title}</h1>
-              <div className="space-y-2 text-sm">
-                <p className="flex items-center gap-2">
-                  <Building className="w-4 h-4" />
-                  <span className="font-semibold">{job.company}</span>
+            <Card className="p-5 bg-gradient-to-r from-[#004f71] to-[#00313c] text-white border-none shadow-lg" style={{
+              padding: '20px',
+              background: 'linear-gradient(to bottom right, #004f71, #00313c)',
+              color: '#ffffff',
+              border: 'none',
+              borderRadius: '12px',
+              boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
+            }}>
+              <h1 className="text-2xl mb-3" style={{
+                fontSize: '1.5rem',
+                marginBottom: '12px',
+                color: '#ffffff',
+                fontWeight: '700',
+                lineHeight: '2rem'
+              }}>{job.title}</h1>
+              <div className="space-y-2 text-sm" style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '8px',
+                fontSize: '0.875rem'
+              }}>
+                <p className="flex items-center gap-2" style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  color: '#ffffff',
+                  fontSize: '0.875rem',
+                  fontWeight: '400',
+                  lineHeight: '1.25rem'
+                }}>
+                  <Building className="w-4 h-4" style={{ width: '16px', height: '16px', color: '#ffffff' }} />
+                  <span className="font-semibold" style={{ fontWeight: '600', color: '#ffffff' }}>{job.company}</span>
                 </p>
-                <p className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4" />
+                <p className="flex items-center gap-2" style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  color: '#ffffff',
+                  fontSize: '0.875rem',
+                  fontWeight: '400',
+                  lineHeight: '1.25rem'
+                }}>
+                  <MapPin className="w-4 h-4" style={{ width: '16px', height: '16px', color: '#ffffff' }} />
                   {job.location}
                 </p>
-                <div className="flex gap-4 flex-wrap">
-                  <p className="flex items-center gap-2">
-                    <DollarSign className="w-4 h-4" />
+                <div className="flex gap-4 flex-wrap" style={{
+                  display: 'flex',
+                  gap: '16px',
+                  flexWrap: 'wrap'
+                }}>
+                  <p className="flex items-center gap-2" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    color: '#ffffff',
+                    fontSize: '0.875rem',
+                    fontWeight: '400',
+                    lineHeight: '1.25rem'
+                  }}>
+                    <DollarSign className="w-4 h-4" style={{ width: '16px', height: '16px', color: '#ffffff' }} />
                     {job.wage}
                   </p>
-                  <p className="flex items-center gap-2">
-                    <Clock className="w-4 h-4" />
+                  <p className="flex items-center gap-2" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    color: '#ffffff',
+                    fontSize: '0.875rem',
+                    fontWeight: '400',
+                    lineHeight: '1.25rem'
+                  }}>
+                    <Clock className="w-4 h-4" style={{ width: '16px', height: '16px', color: '#ffffff' }} />
                     {job.type}
                   </p>
                 </div>
                 {(job.min_hours || job.max_hours) && (
-                  <p className="text-xs text-white/90">
+                  <p className="text-xs text-white/90" style={{
+                    fontSize: '0.75rem',
+                    color: 'rgba(255, 255, 255, 0.9)',
+                    fontWeight: '400',
+                    lineHeight: '1rem'
+                  }}>
                     Hours: {job.min_hours && `${job.min_hours}`}{job.min_hours && job.max_hours && '-'}{job.max_hours && `${job.max_hours}`} hours/week
                   </p>
                 )}
-                <div className="flex items-center gap-4 pt-1">
-                  <p className="text-xs text-white/80">Posted: {formatPostedDate(job.posted_date)}</p>
+                <div className="flex items-center gap-4 pt-1" style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '16px',
+                  paddingTop: '4px'
+                }}>
+                  <p className="text-xs text-white/80" style={{
+                    fontSize: '0.75rem',
+                    color: 'rgba(255, 255, 255, 0.8)',
+                    fontWeight: '400',
+                    lineHeight: '1rem'
+                  }}>Posted: {formatPostedDate(job.posted_date)}</p>
                   {job.closing_date && (
-                    <p className="text-xs text-white/80 flex items-center gap-1">
-                      <Calendar className="w-3 h-3" />
+                    <p className="text-xs text-white/80 flex items-center gap-1" style={{
+                      fontSize: '0.75rem',
+                      color: 'rgba(255, 255, 255, 0.8)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      fontWeight: '400',
+                      lineHeight: '1rem'
+                    }}>
+                      <Calendar className="w-3 h-3" style={{ width: '12px', height: '12px', color: 'rgba(255, 255, 255, 0.8)' }} />
                       Closes: {new Date(job.closing_date).toLocaleDateString()}
                     </p>
                   )}
                 </div>
                 {job.job_number && (
-                  <p className="text-xs text-white/70">Job #: {job.job_number}</p>
+                  <p className="text-xs text-white/70" style={{
+                    fontSize: '0.75rem',
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    fontWeight: '400',
+                    lineHeight: '1rem'
+                  }}>Job #: {job.job_number}</p>
                 )}
               </div>
             </Card>
@@ -85,24 +185,64 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <Card className="p-5 bg-white border border-[#789904] shadow-md">
-              <h2 className="text-lg mb-3" style={{ color: 'var(--uhmc-deep-teal)' }}>
+            <Card className="p-5 bg-white border border-[#789904] shadow-md" style={{
+              padding: '20px',
+              backgroundColor: '#ffffff',
+              border: '1px solid #789904',
+              borderRadius: '12px',
+              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+            }}>
+              <h2 className="text-lg mb-3" style={{
+                fontSize: '1.125rem',
+                color: '#004f71',
+                marginBottom: '12px',
+                fontWeight: '600',
+                lineHeight: '1.75rem'
+              }}>
                 Job Description:
               </h2>
-              <p className="text-base mb-4" style={{ color: 'var(--uhmc-dark-gray)' }}>
+              <p className="text-base mb-4" style={{
+                fontSize: '1rem',
+                color: '#4a4a4a',
+                marginBottom: '16px',
+                fontWeight: '400',
+                lineHeight: '1.5rem'
+              }}>
                 {job.description}
               </p>
 
               {job.responsibilities && job.responsibilities.length > 0 && (
                 <>
-                  <h3 className="text-base mb-2" style={{ color: 'var(--uhmc-deep-teal)' }}>
+                  <h3 className="text-base mb-2" style={{
+                    fontSize: '1rem',
+                    color: '#004f71',
+                    marginBottom: '8px',
+                    fontWeight: '600',
+                    lineHeight: '1.5rem'
+                  }}>
                     Responsibilities:
                   </h3>
-                  <ul className="space-y-1 mb-4">
+                  <ul className="space-y-1 mb-4" style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '4px',
+                    marginBottom: '16px'
+                  }}>
                     {job.responsibilities.map((resp: string, index: number) => (
-                      <li key={index} className="text-sm flex items-start gap-2" style={{ color: 'var(--uhmc-dark-gray)' }}>
-                        <span className="text-[#789904] font-bold">•</span>
-                        <span>{resp}</span>
+                      <li key={index} className="text-sm flex items-start gap-2" style={{
+                        fontSize: '0.875rem',
+                        color: '#4a4a4a',
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: '8px',
+                        fontWeight: '400',
+                        lineHeight: '1.25rem'
+                      }}>
+                        <span className="text-[#789904] font-bold" style={{
+                          color: '#789904',
+                          fontWeight: '700'
+                        }}>•</span>
+                        <span style={{ color: '#4a4a4a', fontSize: '0.875rem', fontWeight: '400' }}>{resp}</span>
                       </li>
                     ))}
                   </ul>
@@ -118,15 +258,42 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <Card className="p-5 bg-white border border-[#dd8a03] shadow-md">
-                <h2 className="text-lg mb-3" style={{ color: 'var(--uhmc-deep-teal)' }}>
+              <Card className="p-5 bg-white border border-[#dd8a03] shadow-md" style={{
+                padding: '20px',
+                backgroundColor: '#ffffff',
+                border: '1px solid #dd8a03',
+                borderRadius: '12px',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+              }}>
+                <h2 className="text-lg mb-3" style={{
+                  fontSize: '1.125rem',
+                  color: '#004f71',
+                  marginBottom: '12px',
+                  fontWeight: '600',
+                  lineHeight: '1.75rem'
+                }}>
                   Qualifications:
                 </h2>
-                <ul className="space-y-1">
+                <ul className="space-y-1" style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '4px'
+                }}>
                   {job.qualifications.map((qual: string, index: number) => (
-                    <li key={index} className="text-sm flex items-start gap-2" style={{ color: 'var(--uhmc-dark-gray)' }}>
-                      <span className="text-[#dd8a03] font-bold">•</span>
-                      <span>{qual}</span>
+                    <li key={index} className="text-sm flex items-start gap-2" style={{
+                      fontSize: '0.875rem',
+                      color: '#4a4a4a',
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: '8px',
+                      fontWeight: '400',
+                      lineHeight: '1.25rem'
+                    }}>
+                      <span className="text-[#dd8a03] font-bold" style={{
+                        color: '#dd8a03',
+                        fontWeight: '700'
+                      }}>•</span>
+                      <span style={{ color: '#4a4a4a', fontSize: '0.875rem', fontWeight: '400' }}>{qual}</span>
                     </li>
                   ))}
                 </ul>
@@ -141,35 +308,91 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              <Card className="p-5 bg-gradient-to-br from-[#789904] to-[#afa96e] text-white border-none shadow-lg">
-                <h2 className="text-lg mb-3">How to Apply:</h2>
-                <div className="space-y-2 text-sm">
+              <Card className="p-5 bg-gradient-to-br from-[#789904] to-[#afa96e] text-white border-none shadow-lg" style={{
+                padding: '20px',
+                background: 'linear-gradient(to bottom right, #789904, #afa96e)',
+                color: '#ffffff',
+                border: 'none',
+                borderRadius: '12px',
+                boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
+              }}>
+                <h2 className="text-lg mb-3" style={{
+                  fontSize: '1.125rem',
+                  color: '#ffffff',
+                  marginBottom: '12px',
+                  fontWeight: '600',
+                  lineHeight: '1.75rem'
+                }}>How to Apply:</h2>
+                <div className="space-y-2 text-sm" style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '8px',
+                  fontSize: '0.875rem'
+                }}>
                   {job.contact_email && (
-                    <p className="flex items-center gap-2">
-                      <Mail className="w-4 h-4" />
-                      <span className="font-semibold">Email:</span> {job.contact_email}
+                    <p className="flex items-center gap-2" style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      color: '#ffffff',
+                      fontSize: '0.875rem',
+                      fontWeight: '400',
+                      lineHeight: '1.25rem'
+                    }}>
+                      <Mail className="w-4 h-4" style={{ width: '16px', height: '16px', color: '#ffffff' }} />
+                      <span className="font-semibold" style={{ fontWeight: '600', color: '#ffffff' }}>Email:</span> {job.contact_email}
                     </p>
                   )}
                   {job.contact_phone && (
-                    <p className="flex items-center gap-2">
-                      <Phone className="w-4 h-4" />
-                      <span className="font-semibold">Phone:</span> {job.contact_phone}
+                    <p className="flex items-center gap-2" style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      color: '#ffffff',
+                      fontSize: '0.875rem',
+                      fontWeight: '400',
+                      lineHeight: '1.25rem'
+                    }}>
+                      <Phone className="w-4 h-4" style={{ width: '16px', height: '16px', color: '#ffffff' }} />
+                      <span className="font-semibold" style={{ fontWeight: '600', color: '#ffffff' }}>Phone:</span> {job.contact_phone}
                     </p>
                   )}
                   {job.contact_office && (
-                    <p className="flex items-center gap-2">
-                      <Building className="w-4 h-4" />
-                      <span className="font-semibold">Office:</span> {job.contact_office}
+                    <p className="flex items-center gap-2" style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      color: '#ffffff',
+                      fontSize: '0.875rem',
+                      fontWeight: '400',
+                      lineHeight: '1.25rem'
+                    }}>
+                      <Building className="w-4 h-4" style={{ width: '16px', height: '16px', color: '#ffffff' }} />
+                      <span className="font-semibold" style={{ fontWeight: '600', color: '#ffffff' }}>Office:</span> {job.contact_office}
                     </p>
                   )}
                   {job.external_url && (
-                    <p className="flex items-center gap-2">
-                      <ExternalLink className="w-4 h-4" />
-                      <span className="font-semibold">More Info:</span> {job.external_url}
+                    <p className="flex items-center gap-2" style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      color: '#ffffff',
+                      fontSize: '0.875rem',
+                      fontWeight: '400',
+                      lineHeight: '1.25rem'
+                    }}>
+                      <ExternalLink className="w-4 h-4" style={{ width: '16px', height: '16px', color: '#ffffff' }} />
+                      <span className="font-semibold" style={{ fontWeight: '600', color: '#ffffff' }}>More Info:</span> {job.external_url}
                     </p>
                   )}
                   {job.source && (
-                    <p className="text-xs text-white/80 pt-1">
+                    <p className="text-xs text-white/80 pt-1" style={{
+                      fontSize: '0.75rem',
+                      color: 'rgba(255, 255, 255, 0.8)',
+                      paddingTop: '4px',
+                      fontWeight: '400',
+                      lineHeight: '1rem'
+                    }}>
                       Source: {job.source}
                     </p>
                   )}
@@ -184,44 +407,134 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
             className="pt-2 pb-4"
+            style={{
+              paddingTop: '8px',
+              paddingBottom: '16px'
+            }}
           >
-            <Card className="p-5 bg-gradient-to-br from-[#004f71] to-[#00313c] text-white border-none shadow-lg">
-              <h2 className="text-lg mb-4">More Job Resources</h2>
-              
+            <Card className="p-5 bg-gradient-to-br from-[#004f71] to-[#00313c] text-white border-none shadow-lg" style={{
+              padding: '20px',
+              background: 'linear-gradient(to bottom right, #004f71, #00313c)',
+              color: '#ffffff',
+              border: 'none',
+              borderRadius: '12px',
+              boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
+            }}>
+              <h2 className="text-lg mb-4" style={{
+                fontSize: '1.125rem',
+                color: '#ffffff',
+                marginBottom: '16px',
+                fontWeight: '600',
+                lineHeight: '1.75rem'
+              }}>More Job Resources</h2>
+
               {/* CareerLink Information */}
-              <div className="mb-5 pb-4 border-b border-white/20">
-                <h3 className="text-base mb-2">Visit CareerLink</h3>
-                <p className="text-sm text-white/90 mb-2">
+              <div className="mb-5 pb-4 border-b border-white/20" style={{
+                marginBottom: '20px',
+                paddingBottom: '16px',
+                borderBottom: '1px solid rgba(255, 255, 255, 0.2)'
+              }}>
+                <h3 className="text-base mb-2" style={{
+                  fontSize: '1rem',
+                  color: '#ffffff',
+                  marginBottom: '8px',
+                  fontWeight: '600',
+                  lineHeight: '1.5rem'
+                }}>Visit CareerLink</h3>
+                <p className="text-sm text-white/90 mb-2" style={{
+                  fontSize: '0.875rem',
+                  color: 'rgba(255, 255, 255, 0.9)',
+                  marginBottom: '8px',
+                  fontWeight: '400',
+                  lineHeight: '1.25rem'
+                }}>
                   For personalized career counseling and job search assistance
                 </p>
-                <div className="space-y-1 text-xs text-white/80">
-                  <p className="flex items-center gap-2">
-                    <Building className="w-3 h-3" />
-                    <span><span className="font-semibold">Location:</span> TLC Building (The Learning Center)</span>
+                <div className="space-y-1 text-xs text-white/80" style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '4px',
+                  fontSize: '0.75rem',
+                  color: 'rgba(255, 255, 255, 0.8)'
+                }}>
+                  <p className="flex items-center gap-2" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    fontSize: '0.75rem',
+                    color: 'rgba(255, 255, 255, 0.8)',
+                    fontWeight: '400',
+                    lineHeight: '1rem'
+                  }}>
+                    <Building className="w-3 h-3" style={{ width: '12px', height: '12px', color: 'rgba(255, 255, 255, 0.8)' }} />
+                    <span style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.75rem' }}><span className="font-semibold" style={{ fontWeight: '600' }}>Location:</span> TLC Building (The Learning Center)</span>
                   </p>
-                  <p className="flex items-center gap-2">
-                    <Phone className="w-3 h-3" />
-                    <span><span className="font-semibold">Phone:</span> (808) 984-3318</span>
+                  <p className="flex items-center gap-2" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    fontSize: '0.75rem',
+                    color: 'rgba(255, 255, 255, 0.8)',
+                    fontWeight: '400',
+                    lineHeight: '1rem'
+                  }}>
+                    <Phone className="w-3 h-3" style={{ width: '12px', height: '12px', color: 'rgba(255, 255, 255, 0.8)' }} />
+                    <span style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.75rem' }}><span className="font-semibold" style={{ fontWeight: '600' }}>Phone:</span> (808) 984-3318</span>
                   </p>
-                  <p className="flex items-center gap-2">
-                    <Mail className="w-3 h-3" />
-                    <span><span className="font-semibold">Email:</span> careerLK@hawaii.edu</span>
+                  <p className="flex items-center gap-2" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    fontSize: '0.75rem',
+                    color: 'rgba(255, 255, 255, 0.8)',
+                    fontWeight: '400',
+                    lineHeight: '1rem'
+                  }}>
+                    <Mail className="w-3 h-3" style={{ width: '12px', height: '12px', color: 'rgba(255, 255, 255, 0.8)' }} />
+                    <span style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.75rem' }}><span className="font-semibold" style={{ fontWeight: '600' }}>Email:</span> careerLK@hawaii.edu</span>
                   </p>
                 </div>
               </div>
 
               {/* SECE with QR Code */}
-              <div className="flex items-start gap-4">
-                <div className="flex-1">
-                  <h3 className="text-base mb-2">Visit SECE Online</h3>
-                  <p className="text-sm text-white/90 mb-2">
+              <div className="flex items-start gap-4" style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '16px'
+              }}>
+                <div className="flex-1" style={{ flex: '1' }}>
+                  <h3 className="text-base mb-2" style={{
+                    fontSize: '1rem',
+                    color: '#ffffff',
+                    marginBottom: '8px',
+                    fontWeight: '600',
+                    lineHeight: '1.5rem'
+                  }}>Visit SECE Online</h3>
+                  <p className="text-sm text-white/90 mb-2" style={{
+                    fontSize: '0.875rem',
+                    color: 'rgba(255, 255, 255, 0.9)',
+                    marginBottom: '8px',
+                    fontWeight: '400',
+                    lineHeight: '1.25rem'
+                  }}>
                     Student Employment & Career Experience - Browse more job opportunities online
                   </p>
-                  <p className="text-xs text-white/80">
+                  <p className="text-xs text-white/80" style={{
+                    fontSize: '0.75rem',
+                    color: 'rgba(255, 255, 255, 0.8)',
+                    fontWeight: '400',
+                    lineHeight: '1rem'
+                  }}>
                     Scan the QR code to visit the SECE website on your phone
                   </p>
                 </div>
-                <div className="bg-white p-3 rounded-lg shadow-lg flex-shrink-0">
+                <div className="bg-white p-3 rounded-lg shadow-lg flex-shrink-0" style={{
+                  backgroundColor: '#ffffff',
+                  padding: '12px',
+                  borderRadius: '12px',
+                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+                  flexShrink: 0
+                }}>
                   <QRCodeSVG
                     value="https://www.hawaii.edu/sece/"
                     size={120}

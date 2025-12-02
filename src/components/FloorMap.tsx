@@ -187,20 +187,49 @@ export function FloorMap({
   };
 
   return (
-    <div className="size-full bg-gradient-to-br from-[#afa96e]/20 via-white to-[#aca39a]/10 flex flex-col">
+    <div
+      className="size-full bg-gradient-to-br from-[#afa96e]/20 via-white to-[#aca39a]/10 flex flex-col"
+      style={{
+        width: '100%',
+        height: '100%',
+        background: 'linear-gradient(to bottom right, rgba(175, 169, 110, 0.2), #ffffff, rgba(172, 163, 154, 0.1))',
+        display: 'flex',
+        flexDirection: 'column'
+      }}
+    >
       {/* Header */}
-      <KioskHeader 
-        title={`Floor ${currentFloor}`} 
-        onBack={onBack} 
+      <KioskHeader
+        title={`Floor ${currentFloor}`}
+        onBack={onBack}
         onHome={onHome}
         onWelcome={onWelcome}
         canGoBack={canGoBack}
       />
 
       {/* Content */}
-      <div className="flex-1 overflow-hidden px-4 py-3 flex flex-col">
+      <div
+        className="flex-1 overflow-hidden px-4 py-3 flex flex-col"
+        style={{
+          flex: 1,
+          overflow: 'hidden',
+          paddingLeft: '16px',
+          paddingRight: '16px',
+          paddingTop: '12px',
+          paddingBottom: '12px',
+          display: 'flex',
+          flexDirection: 'column'
+        }}
+      >
         {/* Floor Navigation */}
-        <div className="flex gap-4 justify-center mb-3">
+        <div
+          className="flex gap-4 justify-center mb-3"
+          style={{
+            display: 'flex',
+            gap: '16px',
+            justifyContent: 'center',
+            marginBottom: '12px'
+          }}
+        >
           <Button
             onClick={() => switchFloor(1)}
             className={`h-12 px-10 text-base shadow-lg transition-all ${
@@ -208,8 +237,23 @@ export function FloorMap({
                 ? "bg-gradient-to-r from-[#004f71] to-[#00313c] text-white"
                 : "bg-gradient-to-r from-[#afa96e] to-[#aca39a] text-white hover:from-[#789904] hover:to-[#afa96e]"
             }`}
+            style={{
+              height: '48px',
+              paddingLeft: '40px',
+              paddingRight: '40px',
+              fontSize: '16px',
+              fontWeight: 600,
+              color: '#ffffff',
+              background: currentFloor === 1
+                ? 'linear-gradient(to bottom right, #004f71, #00313c)'
+                : 'linear-gradient(to bottom right, #789904, #afa96e)',
+              border: 'none',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+            }}
           >
-            Floor 1
+            <span style={{ color: '#ffffff', fontSize: '16px', fontWeight: 600 }}>Floor 1</span>
           </Button>
           <Button
             onClick={() => switchFloor(2)}
@@ -218,8 +262,23 @@ export function FloorMap({
                 ? "bg-gradient-to-r from-[#004f71] to-[#00313c] text-white"
                 : "bg-gradient-to-r from-[#afa96e] to-[#aca39a] text-white hover:from-[#789904] hover:to-[#afa96e]"
             }`}
+            style={{
+              height: '48px',
+              paddingLeft: '40px',
+              paddingRight: '40px',
+              fontSize: '16px',
+              fontWeight: 600,
+              color: '#ffffff',
+              background: currentFloor === 2
+                ? 'linear-gradient(to bottom right, #004f71, #00313c)'
+                : 'linear-gradient(to bottom right, #789904, #afa96e)',
+              border: 'none',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+            }}
           >
-            Floor 2
+            <span style={{ color: '#ffffff', fontSize: '16px', fontWeight: 600 }}>Floor 2</span>
           </Button>
         </div>
 
@@ -230,9 +289,29 @@ export function FloorMap({
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.3 }}
         >
-          <Card className="p-3 bg-white border-4 border-[#789904] shadow-xl mb-3">
-            <div className="relative flex justify-center">
-              <div className="relative">
+          <Card
+            className="p-3 bg-white border-4 border-[#789904] shadow-xl mb-3"
+            style={{
+              padding: '12px',
+              backgroundColor: '#ffffff',
+              border: '4px solid #789904',
+              borderRadius: '8px',
+              boxShadow: '0 10px 15px rgba(0, 0, 0, 0.1)',
+              marginBottom: '12px'
+            }}
+          >
+            <div
+              className="relative flex justify-center"
+              style={{
+                position: 'relative',
+                display: 'flex',
+                justifyContent: 'center'
+              }}
+            >
+              <div
+                className="relative"
+                style={{ position: 'relative' }}
+              >
                 {/* Floor plan image with clickable map */}
                 <img
                   ref={imgRef}
@@ -300,42 +379,183 @@ export function FloorMap({
         </motion.div>
 
         {/* Instruction Text */}
-        <div className="bg-gradient-to-r from-[#ffb600] to-[#dd8a03] rounded-lg p-3 mb-3 shadow-lg">
-          <p className="text-base text-white text-center">
+        <div
+          className="bg-gradient-to-r from-[#ffb600] to-[#dd8a03] rounded-lg p-3 mb-3 shadow-lg"
+          style={{
+            background: 'linear-gradient(to right, #ffb600, #dd8a03)',
+            borderRadius: '8px',
+            padding: '12px',
+            marginBottom: '12px',
+            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+          }}
+        >
+          <p
+            className="text-base text-white text-center"
+            style={{
+              fontSize: '16px',
+              color: '#ffffff',
+              textAlign: 'center',
+              fontWeight: 500,
+              margin: 0
+            }}
+          >
             Touch any room on the map for more details
           </p>
         </div>
 
         {/* Legend */}
-        <Card className="p-3 bg-slate-200 border-2 border-[#65665c] mb-3">
-          <div className="grid grid-cols-3 gap-x-2 gap-y-1 text-sm">
-            <div className="flex items-center gap-1.5">
-              <div className="w-4 h-4 rounded border border-slate-400" style={{ backgroundColor: getRoomColor("faculty") }}></div>
-              <span className="text-slate-800" style={{ fontWeight: 600 }}>Faculty</span>
+        <Card
+          className="p-3 bg-slate-200 border-2 border-[#65665c] mb-3"
+          style={{
+            padding: '12px',
+            backgroundColor: '#e2e8f0',
+            border: '2px solid #65665c',
+            borderRadius: '8px',
+            marginBottom: '12px'
+          }}
+        >
+          <div
+            className="grid grid-cols-3 gap-x-2 gap-y-1 text-sm"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              columnGap: '8px',
+              rowGap: '4px',
+              fontSize: '14px'
+            }}
+          >
+            <div
+              className="flex items-center gap-1.5"
+              style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+            >
+              <div
+                className="w-4 h-4 rounded border border-slate-400"
+                style={{
+                  width: '16px',
+                  height: '16px',
+                  borderRadius: '4px',
+                  border: '1px solid #cbd5e1',
+                  backgroundColor: getRoomColor("faculty")
+                }}
+              ></div>
+              <span
+                className="text-slate-800"
+                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px' }}
+              >Faculty</span>
             </div>
-            <div className="flex items-center gap-1.5">
-              <div className="w-4 h-4 rounded border border-slate-400" style={{ backgroundColor: getRoomColor("student-services") }}></div>
-              <span className="text-slate-800" style={{ fontWeight: 600 }}>Services</span>
+            <div
+              className="flex items-center gap-1.5"
+              style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+            >
+              <div
+                className="w-4 h-4 rounded border border-slate-400"
+                style={{
+                  width: '16px',
+                  height: '16px',
+                  borderRadius: '4px',
+                  border: '1px solid #cbd5e1',
+                  backgroundColor: getRoomColor("student-services")
+                }}
+              ></div>
+              <span
+                className="text-slate-800"
+                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px' }}
+              >Services</span>
             </div>
-            <div className="flex items-center gap-1.5">
-              <div className="w-4 h-4 rounded border border-slate-400" style={{ backgroundColor: getRoomColor("administrative") }}></div>
-              <span className="text-slate-800" style={{ fontWeight: 600 }}>Admin</span>
+            <div
+              className="flex items-center gap-1.5"
+              style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+            >
+              <div
+                className="w-4 h-4 rounded border border-slate-400"
+                style={{
+                  width: '16px',
+                  height: '16px',
+                  borderRadius: '4px',
+                  border: '1px solid #cbd5e1',
+                  backgroundColor: getRoomColor("administrative")
+                }}
+              ></div>
+              <span
+                className="text-slate-800"
+                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px' }}
+              >Admin</span>
             </div>
-            <div className="flex items-center gap-1.5">
-              <div className="w-4 h-4 rounded border border-slate-400" style={{ backgroundColor: getRoomColor("restroom") }}></div>
-              <span className="text-slate-800" style={{ fontWeight: 600 }}>Restroom</span>
+            <div
+              className="flex items-center gap-1.5"
+              style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+            >
+              <div
+                className="w-4 h-4 rounded border border-slate-400"
+                style={{
+                  width: '16px',
+                  height: '16px',
+                  borderRadius: '4px',
+                  border: '1px solid #cbd5e1',
+                  backgroundColor: getRoomColor("restroom")
+                }}
+              ></div>
+              <span
+                className="text-slate-800"
+                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px' }}
+              >Restroom</span>
             </div>
-            <div className="flex items-center gap-1.5">
-              <div className="w-4 h-4 rounded border border-slate-400" style={{ backgroundColor: getRoomColor("stairs") }}></div>
-              <span className="text-slate-800" style={{ fontWeight: 600 }}>Stairs</span>
+            <div
+              className="flex items-center gap-1.5"
+              style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+            >
+              <div
+                className="w-4 h-4 rounded border border-slate-400"
+                style={{
+                  width: '16px',
+                  height: '16px',
+                  borderRadius: '4px',
+                  border: '1px solid #cbd5e1',
+                  backgroundColor: getRoomColor("stairs")
+                }}
+              ></div>
+              <span
+                className="text-slate-800"
+                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px' }}
+              >Stairs</span>
             </div>
-            <div className="flex items-center gap-1.5">
-              <div className="w-4 h-4 rounded border border-slate-400" style={{ backgroundColor: getRoomColor("elevator") }}></div>
-              <span className="text-slate-800" style={{ fontWeight: 600 }}>Elevator</span>
+            <div
+              className="flex items-center gap-1.5"
+              style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+            >
+              <div
+                className="w-4 h-4 rounded border border-slate-400"
+                style={{
+                  width: '16px',
+                  height: '16px',
+                  borderRadius: '4px',
+                  border: '1px solid #cbd5e1',
+                  backgroundColor: getRoomColor("elevator")
+                }}
+              ></div>
+              <span
+                className="text-slate-800"
+                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px' }}
+              >Elevator</span>
             </div>
-            <div className="flex items-center gap-1.5">
-              <div className="w-4 h-4 rounded border border-slate-400" style={{ backgroundColor: getRoomColor("unassigned") }}></div>
-              <span className="text-slate-800" style={{ fontWeight: 600 }}>Unassigned</span>
+            <div
+              className="flex items-center gap-1.5"
+              style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+            >
+              <div
+                className="w-4 h-4 rounded border border-slate-400"
+                style={{
+                  width: '16px',
+                  height: '16px',
+                  borderRadius: '4px',
+                  border: '1px solid #cbd5e1',
+                  backgroundColor: getRoomColor("unassigned")
+                }}
+              ></div>
+              <span
+                className="text-slate-800"
+                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px' }}
+              >Unassigned</span>
             </div>
           </div>
         </Card>
@@ -344,8 +564,22 @@ export function FloorMap({
         <Button
           onClick={() => onNavigate(currentFloor === 1 ? 'floor1-list' : 'floor2-list')}
           className="w-full h-12 bg-gradient-to-r from-[#004f71] to-[#00313c] text-white shadow-lg hover:shadow-xl transition-all"
+          style={{
+            width: '100%',
+            height: '48px',
+            background: 'linear-gradient(to bottom right, #004f71, #00313c)',
+            color: '#ffffff',
+            fontSize: '16px',
+            fontWeight: 600,
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+          }}
         >
-          Switch to List View
+          <span style={{ color: '#ffffff', fontSize: '16px', fontWeight: 600 }}>
+            Switch to List View
+          </span>
         </Button>
       </div>
     </div>

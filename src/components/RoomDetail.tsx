@@ -275,42 +275,94 @@ export function RoomDetail({ room, onBack, onHome, onWelcome, canGoBack, onNavig
   }, [room.roomNumber, roomData.floor]);
 
   return (
-    <div className="size-full bg-gradient-to-br from-[#afa96e]/20 via-white to-[#aca39a]/10 flex flex-col">
+    <div className="size-full bg-gradient-to-br from-[#afa96e]/20 via-white to-[#aca39a]/10 flex flex-col" style={{
+      width: '100%',
+      height: '100%',
+      background: 'linear-gradient(to bottom right, rgba(175, 169, 110, 0.2), white, rgba(172, 163, 154, 0.1))',
+      display: 'flex',
+      flexDirection: 'column'
+    }}>
       {/* Header */}
-      <KioskHeader 
-        title={`Room ${room.roomNumber}`} 
-        onBack={onBack} 
+      <KioskHeader
+        title={`Room ${room.roomNumber}`}
+        onBack={onBack}
         onHome={onHome}
         onWelcome={onWelcome}
         canGoBack={canGoBack}
       />
 
       {/* Content */}
-      <div className="flex-1 overflow-auto px-6 py-4">
+      <div className="flex-1 overflow-auto px-6 py-4" style={{
+        flex: '1',
+        overflowY: 'auto',
+        paddingLeft: '24px',
+        paddingRight: '24px',
+        paddingTop: '16px',
+        paddingBottom: '16px'
+      }}>
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           className="space-y-4"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '16px'
+          }}
         >
           {/* Floor Map with Location Pin */}
-          <Card className="p-3 bg-white border-4 border-[#789904] shadow-xl overflow-hidden">
-            <div className="text-center mb-2">
-              <div 
+          <Card className="p-3 bg-white border-4 border-[#789904] shadow-xl overflow-hidden" style={{
+            padding: '12px',
+            backgroundColor: '#ffffff',
+            border: '4px solid #789904',
+            borderRadius: '12px',
+            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)',
+            overflow: 'hidden'
+          }}>
+            <div className="text-center mb-2" style={{
+              textAlign: 'center',
+              marginBottom: '8px'
+            }}>
+              <div
                 className={`inline-block px-3 py-1 rounded-full text-sm shadow-lg mb-2 ${getTypeLabelTextColor(roomData.type)}`}
-                style={{ backgroundColor: roomColor }}
+                style={{
+                  backgroundColor: roomColor,
+                  display: 'inline-block',
+                  paddingLeft: '12px',
+                  paddingRight: '12px',
+                  paddingTop: '4px',
+                  paddingBottom: '4px',
+                  borderRadius: '9999px',
+                  fontSize: '0.875rem',
+                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+                  marginBottom: '8px',
+                  fontWeight: '600',
+                  lineHeight: '1.25rem'
+                }}
               >
                 {getTypeLabel(roomData.type)}
               </div>
             </div>
-            
-            <div className="relative w-full max-w-sm mx-auto">
-              <img 
+
+            <div className="relative w-full max-w-sm mx-auto" style={{
+              position: 'relative',
+              width: '100%',
+              maxWidth: '384px',
+              marginLeft: 'auto',
+              marginRight: 'auto'
+            }}>
+              <img
                 ref={imgRef}
                 src={roomData.floor === 1 ? floor1Image : floor2Image}
                 alt={`Floor ${roomData.floor} Map`}
                 className="w-full h-auto rounded-lg"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: '12px'
+                }}
               />
-              
+
               {/* Location Pin */}
               {pinPosition && (
                 <motion.div
@@ -319,6 +371,7 @@ export function RoomDetail({ room, onBack, onHome, onWelcome, canGoBack, onNavig
                   transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
                   className="absolute"
                   style={{
+                    position: 'absolute',
                     left: `${pinPosition.x}px`,
                     top: `${pinPosition.y}px`,
                     transform: 'translate(-50%, -100%)',
@@ -328,75 +381,222 @@ export function RoomDetail({ room, onBack, onHome, onWelcome, canGoBack, onNavig
                     animate={{ y: [0, -8, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
                   >
-                    <MapPin 
-                      className="text-[#FF0000] drop-shadow-lg" 
-                      size={32} 
+                    <MapPin
+                      className="text-[#FF0000] drop-shadow-lg"
+                      size={32}
                       fill="#FF0000"
                       strokeWidth={2}
+                      style={{ color: '#FF0000' }}
                     />
                   </motion.div>
-                  
+
                   {/* Room number label */}
-                  <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-[#004f71] text-white px-2 py-0.5 rounded-full text-xs whitespace-nowrap shadow-lg">
+                  <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-[#004f71] text-white px-2 py-0.5 rounded-full text-xs whitespace-nowrap shadow-lg" style={{
+                    position: 'absolute',
+                    bottom: '-24px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    backgroundColor: '#004f71',
+                    color: '#ffffff',
+                    paddingLeft: '8px',
+                    paddingRight: '8px',
+                    paddingTop: '2px',
+                    paddingBottom: '2px',
+                    borderRadius: '9999px',
+                    fontSize: '0.75rem',
+                    whiteSpace: 'nowrap',
+                    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+                    fontWeight: '600',
+                    lineHeight: '1rem'
+                  }}>
                     {room.roomNumber}
                   </div>
                 </motion.div>
               )}
             </div>
-            
-            <div className="text-center mt-3 text-xs text-[#65665c]">
+
+            <div className="text-center mt-3 text-xs text-[#65665c]" style={{
+              textAlign: 'center',
+              marginTop: '12px',
+              fontSize: '0.75rem',
+              color: '#65665c',
+              fontWeight: '400',
+              lineHeight: '1rem'
+            }}>
               Floor {roomData.floor} - Ka Lama Building
             </div>
           </Card>
 
           {/* Room Information */}
-          <Card className="p-5 bg-white border-4 border-[#004f71] shadow-xl">
-            <div className="text-center mb-4">
-              <h3 className="text-2xl text-[#004f71] mb-2">
+          <Card className="p-5 bg-white border-4 border-[#004f71] shadow-xl" style={{
+            padding: '20px',
+            backgroundColor: '#ffffff',
+            border: '4px solid #004f71',
+            borderRadius: '12px',
+            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)'
+          }}>
+            <div className="text-center mb-4" style={{
+              textAlign: 'center',
+              marginBottom: '16px'
+            }}>
+              <h3 className="text-2xl text-[#004f71] mb-2" style={{
+                fontSize: '1.5rem',
+                color: '#004f71',
+                marginBottom: '8px',
+                fontWeight: '700',
+                lineHeight: '2rem'
+              }}>
                 Room {room.roomNumber} - {roomData.name}
               </h3>
               {roomData.description && (
-                <p className="text-base text-[#65665c] mt-2">{roomData.description}</p>
+                <p className="text-base text-[#65665c] mt-2" style={{
+                  fontSize: '1rem',
+                  color: '#65665c',
+                  marginTop: '8px',
+                  fontWeight: '400',
+                  lineHeight: '1.5rem'
+                }}>{roomData.description}</p>
               )}
             </div>
 
             {/* Room Information Grid */}
-            <div className="grid grid-cols-1 gap-3">
-              <div className="p-4 bg-gradient-to-r from-[#afa96e]/20 to-white rounded-lg border-2 border-[#afa96e]">
-                <div className="text-sm text-[#65665c] mb-1">Location</div>
-                <div className="text-lg text-[#004f71]">Floor {roomData.floor}, Ka Lama Building</div>
+            <div className="grid grid-cols-1 gap-3" style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr',
+              gap: '12px'
+            }}>
+              <div className="p-4 bg-gradient-to-r from-[#afa96e]/20 to-white rounded-lg border-2 border-[#afa96e]" style={{
+                padding: '16px',
+                background: 'linear-gradient(to right, rgba(175, 169, 110, 0.2), white)',
+                borderRadius: '12px',
+                border: '2px solid #afa96e',
+                backgroundColor: '#ffffff'
+              }}>
+                <div className="text-sm text-[#65665c] mb-1" style={{
+                  fontSize: '0.875rem',
+                  color: '#65665c',
+                  marginBottom: '4px',
+                  fontWeight: '500',
+                  lineHeight: '1.25rem'
+                }}>Location</div>
+                <div className="text-lg text-[#004f71]" style={{
+                  fontSize: '1.125rem',
+                  color: '#004f71',
+                  fontWeight: '600',
+                  lineHeight: '1.75rem'
+                }}>Floor {roomData.floor}, Ka Lama Building</div>
               </div>
 
               {roomData.occupant && (
-                <div className="p-4 bg-white rounded-lg border-2 border-[#004f71]">
-                  <div className="text-sm text-[#65665c] mb-1">Occupant</div>
-                  <div className="text-lg text-[#004f71]">{roomData.occupant}</div>
+                <div className="p-4 bg-white rounded-lg border-2 border-[#004f71]" style={{
+                  padding: '16px',
+                  backgroundColor: '#ffffff',
+                  borderRadius: '12px',
+                  border: '2px solid #004f71'
+                }}>
+                  <div className="text-sm text-[#65665c] mb-1" style={{
+                    fontSize: '0.875rem',
+                    color: '#65665c',
+                    marginBottom: '4px',
+                    fontWeight: '500',
+                    lineHeight: '1.25rem'
+                  }}>Occupant</div>
+                  <div className="text-lg text-[#004f71]" style={{
+                    fontSize: '1.125rem',
+                    color: '#004f71',
+                    fontWeight: '600',
+                    lineHeight: '1.75rem'
+                  }}>{roomData.occupant}</div>
                 </div>
               )}
 
               {roomData.department && (
-                <div className="p-4 bg-white rounded-lg border-2 border-[#789904]">
-                  <div className="text-sm text-[#65665c] mb-1">Department</div>
-                  <div className="text-lg text-[#004f71]">{roomData.department}</div>
+                <div className="p-4 bg-white rounded-lg border-2 border-[#789904]" style={{
+                  padding: '16px',
+                  backgroundColor: '#ffffff',
+                  borderRadius: '12px',
+                  border: '2px solid #789904'
+                }}>
+                  <div className="text-sm text-[#65665c] mb-1" style={{
+                    fontSize: '0.875rem',
+                    color: '#65665c',
+                    marginBottom: '4px',
+                    fontWeight: '500',
+                    lineHeight: '1.25rem'
+                  }}>Department</div>
+                  <div className="text-lg text-[#004f71]" style={{
+                    fontSize: '1.125rem',
+                    color: '#004f71',
+                    fontWeight: '600',
+                    lineHeight: '1.75rem'
+                  }}>{roomData.department}</div>
                 </div>
               )}
 
-              <div className="p-4 bg-white rounded-lg border-2 border-[#afa96e]">
-                <div className="text-sm text-[#65665c] mb-1">Hours</div>
-                <div className="text-lg text-[#004f71]">{roomData.hours}</div>
+              <div className="p-4 bg-white rounded-lg border-2 border-[#afa96e]" style={{
+                padding: '16px',
+                backgroundColor: '#ffffff',
+                borderRadius: '12px',
+                border: '2px solid #afa96e'
+              }}>
+                <div className="text-sm text-[#65665c] mb-1" style={{
+                  fontSize: '0.875rem',
+                  color: '#65665c',
+                  marginBottom: '4px',
+                  fontWeight: '500',
+                  lineHeight: '1.25rem'
+                }}>Hours</div>
+                <div className="text-lg text-[#004f71]" style={{
+                  fontSize: '1.125rem',
+                  color: '#004f71',
+                  fontWeight: '600',
+                  lineHeight: '1.75rem'
+                }}>{roomData.hours}</div>
               </div>
 
               {roomData.phone && (
-                <div className="p-4 bg-white rounded-lg border-2 border-[#ffb600]">
-                  <div className="text-sm text-[#65665c] mb-1">Phone</div>
-                  <div className="text-lg text-[#004f71]">{roomData.phone}</div>
+                <div className="p-4 bg-white rounded-lg border-2 border-[#ffb600]" style={{
+                  padding: '16px',
+                  backgroundColor: '#ffffff',
+                  borderRadius: '12px',
+                  border: '2px solid #ffb600'
+                }}>
+                  <div className="text-sm text-[#65665c] mb-1" style={{
+                    fontSize: '0.875rem',
+                    color: '#65665c',
+                    marginBottom: '4px',
+                    fontWeight: '500',
+                    lineHeight: '1.25rem'
+                  }}>Phone</div>
+                  <div className="text-lg text-[#004f71]" style={{
+                    fontSize: '1.125rem',
+                    color: '#004f71',
+                    fontWeight: '600',
+                    lineHeight: '1.75rem'
+                  }}>{roomData.phone}</div>
                 </div>
               )}
 
               {roomData.email && (
-                <div className="p-4 bg-white rounded-lg border-2 border-[#dd8a03]">
-                  <div className="text-sm text-[#65665c] mb-1">Email</div>
-                  <div className="text-lg text-[#004f71]">{roomData.email}</div>
+                <div className="p-4 bg-white rounded-lg border-2 border-[#dd8a03]" style={{
+                  padding: '16px',
+                  backgroundColor: '#ffffff',
+                  borderRadius: '12px',
+                  border: '2px solid #dd8a03'
+                }}>
+                  <div className="text-sm text-[#65665c] mb-1" style={{
+                    fontSize: '0.875rem',
+                    color: '#65665c',
+                    marginBottom: '4px',
+                    fontWeight: '500',
+                    lineHeight: '1.25rem'
+                  }}>Email</div>
+                  <div className="text-lg text-[#004f71]" style={{
+                    fontSize: '1.125rem',
+                    color: '#004f71',
+                    fontWeight: '600',
+                    lineHeight: '1.75rem'
+                  }}>{roomData.email}</div>
                 </div>
               )}
             </div>

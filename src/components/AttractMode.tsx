@@ -53,7 +53,7 @@ export function AttractMode({ onTouch }: AttractModeProps) {
       id: 'whats-inside',
       type: 'static',
       title: "What's Inside the Kiosk",
-      subtitle: 'Programs • Building Directory • Jobs & Career Info • Campus Survey • Events & Resources',
+      subtitle: 'Programs • Building Directory • Jobs & Career Info',
       image: whatsInsideImage,
       gradientColors: 'from-[#004f71]/85 via-[#00313c]/80 to-[#004f71]/85',
       showTouchIndicator: true,

@@ -209,15 +209,19 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
       <div className="flex-1 overflow-auto px-8 py-6" style={{ flex: '1', overflow: 'auto', paddingLeft: '32px', paddingRight: '32px', paddingTop: '24px', paddingBottom: '24px' }}>
         {/* Program Type */}
         <Card className="p-6 mb-6 bg-gradient-to-br from-[#004f71] to-[#00313c] border-0" style={{ background: 'linear-gradient(to bottom right, #004f71, #00313c)', padding: '32px', borderRadius: '12px', border: 'none', marginBottom: '24px' }}>
-          <h3 className="text-3xl text-[#ffb600]" style={{ fontSize: '1.875rem', color: '#ffb600', fontWeight: '700', margin: '0' }}>{details.programType}</h3>
+          <h3 className="text-3xl text-[#ffb600]" style={{ fontSize: '1.875rem', color: '#ffb600', fontWeight: '700', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{details.programType}</h3>
         </Card>
 
         {/* Overview */}
         <Card className="p-8 mb-6 bg-white" style={{ background: '#ffffff', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-          <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700' }}>OVERVIEW</h3>
-          <p className="text-lg text-slate-700 leading-relaxed" style={{ fontSize: '1.125rem', color: '#334155', lineHeight: '1.75' }}>{details.overview}</p>
+          <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>OVERVIEW</h3>
+          <p className="text-lg text-slate-700 leading-relaxed" style={{ fontSize: '1.125rem', color: '#334155', lineHeight: '1.75',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{details.overview}</p>
           {details.additionalInfo && (
-            <p className="text-lg text-slate-700 leading-relaxed mt-4" style={{ fontSize: '1.125rem', color: '#334155', lineHeight: '1.75', marginTop: '16px' }}>{details.additionalInfo}</p>
+            <p className="text-lg text-slate-700 leading-relaxed mt-4" style={{ fontSize: '1.125rem', color: '#334155', lineHeight: '1.75', marginTop: '16px',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{details.additionalInfo}</p>
           )}
         </Card>
 
@@ -226,11 +230,13 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
           <>
             {/* Passion Areas */}
             <Card className="p-8 mb-6 bg-gradient-to-br from-emerald-600 to-teal-600 text-white" style={{ background: 'linear-gradient(to bottom right, #059669, #0d9488)', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl mb-4" style={{ fontSize: '1.875rem', color: '#ffffff', marginBottom: '16px', fontWeight: '700' }}>IF YOUR PASSION LIES IN THE FOLLOWING, ABIT IS FOR YOU!</h3>
+              <h3 className="text-3xl mb-4" style={{ fontSize: '1.875rem', color: '#ffffff', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>IF YOUR PASSION LIES IN THE FOLLOWING, ABIT IS FOR YOU!</h3>
               <div className="space-y-3" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {details.passionAreas.map((passion: string, index: number) => (
                   <div key={index} className="p-4 bg-white/10 rounded-lg" style={{ padding: '16px', background: 'rgba(255, 255, 255, 0.1)', borderRadius: '8px' }}>
-                    <p className="text-lg break-words" style={{ fontSize: '1.125rem', color: '#ffffff', wordWrap: 'break-word', margin: '0' }}>{passion}</p>
+                    <p className="text-lg break-words" style={{ fontSize: '1.125rem', color: '#ffffff', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{passion}</p>
                   </div>
                 ))}
               </div>
@@ -238,12 +244,15 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
 
             {/* Two Pathways */}
             <Card className="p-8 mb-6 bg-white" style={{ background: '#ffffff', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700' }}>TWO PATHWAYS</h3>
+              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>TWO PATHWAYS</h3>
               <div className="space-y-4" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {details.pathways.map((pathway: any, index: number) => (
                   <div key={index} className="p-5 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg" style={{ padding: '20px', background: 'linear-gradient(to right, #ecfdf5, #f0fdfa)', borderRadius: '8px' }}>
-                    <h4 className="text-2xl text-emerald-700 mb-2" style={{ fontSize: '1.5rem', color: '#047857', marginBottom: '8px', fontWeight: '600' }}>{pathway.title}</h4>
-                    <p className="text-lg text-slate-700" style={{ fontSize: '1.125rem', color: '#334155', margin: '0' }}>{pathway.credits}</p>
+                    <h4 className="text-2xl text-emerald-700 mb-2" style={{ fontSize: '1.5rem', color: '#047857', marginBottom: '8px', fontWeight: '600',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{pathway.title}</h4>
+                    <p className="text-lg text-slate-700" style={{ fontSize: '1.125rem', color: '#334155', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{pathway.credits}</p>
                   </div>
                 ))}
               </div>
@@ -251,11 +260,13 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
 
             {/* Career Focus Areas */}
             <Card className="p-8 mb-6 bg-white" style={{ background: '#ffffff', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700' }}>CAREER FOCUS AREAS</h3>
+              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>CAREER FOCUS AREAS</h3>
               <div className="space-y-3" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {details.careerFocus.map((focus: string, index: number) => (
                   <div key={index} className="p-4 bg-emerald-50 rounded-lg" style={{ padding: '16px', background: '#ecfdf5', borderRadius: '8px' }}>
-                    <p className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0' }}>{focus}</p>
+                    <p className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{focus}</p>
                   </div>
                 ))}
               </div>
@@ -263,12 +274,15 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
 
             {/* Top Careers & Salaries */}
             <Card className="p-8 mb-6 bg-white" style={{ background: '#ffffff', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700' }}>TOP CAREERS & SALARIES</h3>
+              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>TOP CAREERS & SALARIES</h3>
               <div className="space-y-3" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {details.topCareers.map((career: any, index: number) => (
                   <div key={index} className="p-5 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg flex justify-between items-center" style={{ padding: '20px', background: 'linear-gradient(to right, #ecfdf5, #f0fdfa)', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <h4 className="text-xl text-slate-900 break-words" style={{ fontSize: '1.25rem', color: '#0f172a', wordWrap: 'break-word', margin: '0' }}>{career.title}</h4>
-                    <p className="text-2xl text-emerald-700 flex-shrink-0 ml-4" style={{ fontSize: '1.5rem', color: '#047857', flexShrink: '0', marginLeft: '16px', margin: '0' }}>{career.salary}</p>
+                    <h4 className="text-xl text-slate-900 break-words" style={{ fontSize: '1.25rem', color: '#0f172a', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{career.title}</h4>
+                    <p className="text-2xl text-emerald-700 flex-shrink-0 ml-4" style={{ fontSize: '1.5rem', color: '#047857', flexShrink: '0', marginLeft: '16px', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{career.salary}</p>
                   </div>
                 ))}
               </div>
@@ -276,11 +290,13 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
 
             {/* Special Features */}
             <Card className="p-8 mb-6 bg-gradient-to-br from-[#004f71] to-[#00313c] text-white" style={{ background: 'linear-gradient(to bottom right, #004f71, #00313c)', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl mb-4" style={{ fontSize: '1.875rem', color: '#ffffff', marginBottom: '16px', fontWeight: '700' }}>SPECIAL FEATURES</h3>
+              <h3 className="text-3xl mb-4" style={{ fontSize: '1.875rem', color: '#ffffff', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>SPECIAL FEATURES</h3>
               <div className="space-y-3" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {details.specialFeatures.map((feature: string, index: number) => (
                   <div key={index} className="p-4 bg-white/10 rounded-lg" style={{ padding: '16px', background: 'rgba(255, 255, 255, 0.1)', borderRadius: '8px' }}>
-                    <p className="text-lg break-words" style={{ fontSize: '1.125rem', color: '#ffffff', wordWrap: 'break-word', margin: '0' }}>{feature}</p>
+                    <p className="text-lg break-words" style={{ fontSize: '1.125rem', color: '#ffffff', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{feature}</p>
                   </div>
                 ))}
               </div>
@@ -293,12 +309,15 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
           <>
             {/* Flexible Pathways */}
             <Card className="p-8 mb-6 bg-white" style={{ background: '#ffffff', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700' }}>FLEXIBLE PATHWAYS</h3>
+              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>FLEXIBLE PATHWAYS</h3>
               <div className="space-y-4" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {details.pathways.map((pathway: any, index: number) => (
                   <div key={index} className="p-5 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg bg-[rgb(93,142,217)]" style={{ padding: '20px', background: 'linear-gradient(to right, #ecfdf5, #f0fdfa)', borderRadius: '8px' }}>
-                    <h4 className="text-2xl text-emerald-700 mb-2" style={{ fontSize: '1.5rem', color: '#047857', marginBottom: '8px', fontWeight: '600' }}>{pathway.title}</h4>
-                    <p className="text-lg text-slate-700" style={{ fontSize: '1.125rem', color: '#334155', margin: '0' }}>{pathway.credits}</p>
+                    <h4 className="text-2xl text-emerald-700 mb-2" style={{ fontSize: '1.5rem', color: '#047857', marginBottom: '8px', fontWeight: '600',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{pathway.title}</h4>
+                    <p className="text-lg text-slate-700" style={{ fontSize: '1.125rem', color: '#334155', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{pathway.credits}</p>
                   </div>
                 ))}
               </div>
@@ -306,11 +325,13 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
 
             {/* What You'll Learn */}
             <Card className="p-8 mb-6 bg-white" style={{ background: '#ffffff', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700' }}>WHAT YOU'LL LEARN</h3>
+              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>WHAT YOU'LL LEARN</h3>
               <div className="space-y-3" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {details.learningAreas.map((area: string, index: number) => (
                   <div key={index} className="p-4 bg-emerald-50 rounded-lg" style={{ padding: '16px', background: '#ecfdf5', borderRadius: '8px' }}>
-                    <p className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0' }}>{area}</p>
+                    <p className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{area}</p>
                   </div>
                 ))}
               </div>
@@ -318,11 +339,13 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
 
             {/* Career Opportunities */}
             <Card className="p-8 mb-6 bg-white" style={{ background: '#ffffff', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700' }}>CAREER OPPORTUNITIES</h3>
+              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>CAREER OPPORTUNITIES</h3>
               <div className="space-y-3" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {details.careers.map((career: string, index: number) => (
                   <div key={index} className="p-4 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg" style={{ padding: '16px', background: 'linear-gradient(to right, #ecfdf5, #f0fdfa)', borderRadius: '8px' }}>
-                    <p className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0' }}>{career}</p>
+                    <p className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{career}</p>
                   </div>
                 ))}
               </div>
@@ -330,11 +353,13 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
 
             {/* Transfer Options */}
             <Card className="p-8 mb-6 bg-gradient-to-br from-[#004f71] to-[#00313c] text-white" style={{ background: 'linear-gradient(to bottom right, #004f71, #00313c)', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl mb-4" style={{ fontSize: '1.875rem', color: '#ffffff', marginBottom: '16px', fontWeight: '700' }}>TRANSFER OPTIONS</h3>
+              <h3 className="text-3xl mb-4" style={{ fontSize: '1.875rem', color: '#ffffff', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>TRANSFER OPTIONS</h3>
               <div className="space-y-3" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {details.transferOptions.map((option: string, index: number) => (
                   <div key={index} className="p-4 bg-white/10 rounded-lg" style={{ padding: '16px', background: 'rgba(255, 255, 255, 0.1)', borderRadius: '8px' }}>
-                    <p className="text-lg break-words" style={{ fontSize: '1.125rem', color: '#ffffff', wordWrap: 'break-word', margin: '0' }}>{option}</p>
+                    <p className="text-lg break-words" style={{ fontSize: '1.125rem', color: '#ffffff', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{option}</p>
                   </div>
                 ))}
               </div>
@@ -347,11 +372,13 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
           <>
             {/* Key Statistics */}
             <Card className="mb-6 bg-gradient-to-br from-[#004f71] to-[#00313c] text-white px-[15px] py-[32px]" style={{ background: 'linear-gradient(to bottom right, #004f71, #00313c)', paddingLeft: '15px', paddingRight: '15px', paddingTop: '32px', paddingBottom: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl mb-4" style={{ fontSize: '1.875rem', color: '#ffffff', marginBottom: '16px', fontWeight: '700' }}>KEY STATISTICS</h3>
+              <h3 className="text-3xl mb-4" style={{ fontSize: '1.875rem', color: '#ffffff', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>KEY STATISTICS</h3>
               <div className="grid grid-cols-3 gap-6" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
                 {details.keyStats.map((stat: any, index: number) => (
                   <div key={index} className="text-center bg-white/10 rounded-lg px-[10px] py-[16px]" style={{ textAlign: 'center', background: 'rgba(255, 255, 255, 0.1)', borderRadius: '8px', paddingLeft: '10px', paddingRight: '10px', paddingTop: '16px', paddingBottom: '16px' }}>
-                    <p className="text-2xl break-words text-[16px] px-[1px] py-[0px] text-center" style={{ fontSize: '16px', color: '#ffffff', wordWrap: 'break-word', paddingLeft: '1px', paddingRight: '1px', paddingTop: '0px', paddingBottom: '0px', textAlign: 'center', margin: '0' }}>{stat.label}</p>
+                    <p className="text-2xl break-words text-[16px] px-[1px] py-[0px] text-center" style={{ fontSize: '16px', color: '#ffffff', wordWrap: 'break-word', paddingLeft: '1px', paddingRight: '1px', paddingTop: '0px', paddingBottom: '0px', textAlign: 'center', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{stat.label}</p>
                   </div>
                 ))}
               </div>
@@ -359,12 +386,15 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
 
             {/* Program Options */}
             <Card className="p-8 mb-6 bg-white" style={{ background: '#ffffff', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700' }}>PROGRAM OPTIONS</h3>
+              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>PROGRAM OPTIONS</h3>
               <div className="space-y-4" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {details.pathways.map((pathway: any, index: number) => (
                   <div key={index} className="p-5 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg" style={{ padding: '20px', background: 'linear-gradient(to right, #ecfdf5, #f0fdfa)', borderRadius: '8px' }}>
-                    <h4 className="text-2xl text-emerald-700 mb-2" style={{ fontSize: '1.5rem', color: '#047857', marginBottom: '8px', fontWeight: '600' }}>{pathway.title}</h4>
-                    <p className="text-lg text-slate-700" style={{ fontSize: '1.125rem', color: '#334155', margin: '0' }}>{pathway.credits}</p>
+                    <h4 className="text-2xl text-emerald-700 mb-2" style={{ fontSize: '1.5rem', color: '#047857', marginBottom: '8px', fontWeight: '600',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{pathway.title}</h4>
+                    <p className="text-lg text-slate-700" style={{ fontSize: '1.125rem', color: '#334155', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{pathway.credits}</p>
                   </div>
                 ))}
               </div>
@@ -372,11 +402,13 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
 
             {/* Unique Features */}
             <Card className="p-8 mb-6 bg-white" style={{ background: '#ffffff', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700' }}>UNIQUE FEATURES</h3>
+              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>UNIQUE FEATURES</h3>
               <div className="space-y-3" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {details.uniqueFeatures.map((feature: string, index: number) => (
                   <div key={index} className="p-4 bg-[rgb(60,139,165)] rounded-lg" style={{ padding: '16px', background: 'rgb(60, 139, 165)', borderRadius: '8px' }}>
-                    <p className="text-lg text-[rgb(250,252,255)] break-words font-bold" style={{ fontSize: '1.125rem', color: 'rgb(250, 252, 255)', wordWrap: 'break-word', fontWeight: '700', margin: '0' }}>{feature}</p>
+                    <p className="text-lg text-[rgb(250,252,255)] break-words font-bold" style={{ fontSize: '1.125rem', color: 'rgb(250, 252, 255)', wordWrap: 'break-word', fontWeight: '700', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{feature}</p>
                   </div>
                 ))}
               </div>
@@ -384,11 +416,13 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
 
             {/* Career Paths */}
             <Card className="p-8 mb-6 bg-white" style={{ background: '#ffffff', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700' }}>CAREER PATHS</h3>
+              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>CAREER PATHS</h3>
               <div className="space-y-3" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {details.careers.map((career: string, index: number) => (
                   <div key={index} className="p-4 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg" style={{ padding: '16px', background: 'linear-gradient(to right, #ecfdf5, #f0fdfa)', borderRadius: '8px' }}>
-                    <p className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0' }}>{career}</p>
+                    <p className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{career}</p>
                   </div>
                 ))}
               </div>
@@ -396,17 +430,21 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
 
             {/* Industries */}
             <Card className="p-8 mb-6 bg-gradient-to-br from-[#004f71] to-[#00313c] text-white" style={{ background: 'linear-gradient(to bottom right, #004f71, #00313c)', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl mb-4" style={{ fontSize: '1.875rem', color: '#ffffff', marginBottom: '16px', fontWeight: '700' }}>INDUSTRIES</h3>
-              <p className="text-xl break-words" style={{ fontSize: '1.25rem', color: '#ffffff', wordWrap: 'break-word', margin: '0' }}>{details.industries}</p>
+              <h3 className="text-3xl mb-4" style={{ fontSize: '1.875rem', color: '#ffffff', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>INDUSTRIES</h3>
+              <p className="text-xl break-words" style={{ fontSize: '1.25rem', color: '#ffffff', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{details.industries}</p>
             </Card>
 
             {/* Transfer Partners */}
             <Card className="p-8 mb-6 bg-white" style={{ background: '#ffffff', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700' }}>TRANSFER PARTNERS</h3>
+              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>TRANSFER PARTNERS</h3>
               <div className="space-y-3" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {details.transferPartners.map((partner: string, index: number) => (
                   <div key={index} className="p-4 bg-emerald-50 rounded-lg" style={{ padding: '16px', background: '#ecfdf5', borderRadius: '8px' }}>
-                    <p className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0' }}>{partner}</p>
+                    <p className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{partner}</p>
                   </div>
                 ))}
               </div>
@@ -419,11 +457,13 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
           <>
             {/* Why Accounting */}
             <Card className="p-8 mb-6 bg-gradient-to-br from-[#004f71] to-[#00313c] text-white" style={{ background: 'linear-gradient(to bottom right, #004f71, #00313c)', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl mb-4" style={{ fontSize: '1.875rem', color: '#ffffff', marginBottom: '16px', fontWeight: '700' }}>WHY ACCOUNTING?</h3>
+              <h3 className="text-3xl mb-4" style={{ fontSize: '1.875rem', color: '#ffffff', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>WHY ACCOUNTING?</h3>
               <div className="space-y-3" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {details.whyAccounting.map((reason: string, index: number) => (
                   <div key={index} className="p-4 bg-white/10 rounded-lg" style={{ padding: '16px', background: 'rgba(255, 255, 255, 0.1)', borderRadius: '8px' }}>
-                    <p className="text-lg break-words" style={{ fontSize: '1.125rem', color: '#ffffff', wordWrap: 'break-word', margin: '0' }}>{reason}</p>
+                    <p className="text-lg break-words" style={{ fontSize: '1.125rem', color: '#ffffff', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{reason}</p>
                   </div>
                 ))}
               </div>
@@ -431,12 +471,15 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
 
             {/* Program Options */}
             <Card className="p-8 mb-6 bg-white" style={{ background: '#ffffff', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700' }}>PROGRAM OPTIONS</h3>
+              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>PROGRAM OPTIONS</h3>
               <div className="space-y-4" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {details.pathways.map((pathway: any, index: number) => (
                   <div key={index} className="p-5 bg-gradient-to-r from-amber-50 to-yellow-50 rounded-lg" style={{ padding: '20px', background: 'linear-gradient(to right, #fffbeb, #fefce8)', borderRadius: '8px' }}>
-                    <h4 className="text-2xl text-amber-700 mb-2" style={{ fontSize: '1.5rem', color: '#b45309', marginBottom: '8px', fontWeight: '600' }}>{pathway.title}</h4>
-                    <p className="text-lg text-slate-700" style={{ fontSize: '1.125rem', color: '#334155', margin: '0' }}>{pathway.credits}</p>
+                    <h4 className="text-2xl text-amber-700 mb-2" style={{ fontSize: '1.5rem', color: '#b45309', marginBottom: '8px', fontWeight: '600',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{pathway.title}</h4>
+                    <p className="text-lg text-slate-700" style={{ fontSize: '1.125rem', color: '#334155', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{pathway.credits}</p>
                   </div>
                 ))}
               </div>
@@ -444,36 +487,43 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
 
             {/* Career Progression */}
             <Card className="p-8 mb-6 bg-white" style={{ background: '#ffffff', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl text-slate-900 mb-6" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '24px', fontWeight: '700' }}>CAREER PROGRESSION</h3>
+              <h3 className="text-3xl text-slate-900 mb-6" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '24px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>CAREER PROGRESSION</h3>
 
               <div className="mb-6" style={{ marginBottom: '24px' }}>
-                <h4 className="text-2xl text-amber-700 mb-3" style={{ fontSize: '1.5rem', color: '#b45309', marginBottom: '12px', fontWeight: '600' }}>With Certificate:</h4>
+                <h4 className="text-2xl text-amber-700 mb-3" style={{ fontSize: '1.5rem', color: '#b45309', marginBottom: '12px', fontWeight: '600',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>With Certificate:</h4>
                 <div className="space-y-2" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {details.careerProgression.certificate.map((career: string, index: number) => (
                     <div key={index} className="p-3 bg-amber-50 rounded-lg" style={{ padding: '12px', background: '#fffbeb', borderRadius: '8px' }}>
-                      <p className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0' }}>{career}</p>
+                      <p className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{career}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="mb-6" style={{ marginBottom: '24px' }}>
-                <h4 className="text-2xl text-amber-700 mb-3" style={{ fontSize: '1.5rem', color: '#b45309', marginBottom: '12px', fontWeight: '600' }}>With AAS Degree:</h4>
+                <h4 className="text-2xl text-amber-700 mb-3" style={{ fontSize: '1.5rem', color: '#b45309', marginBottom: '12px', fontWeight: '600',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>With AAS Degree:</h4>
                 <div className="space-y-2" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {details.careerProgression.aas.map((career: string, index: number) => (
                     <div key={index} className="p-3 bg-amber-50 rounded-lg" style={{ padding: '12px', background: '#fffbeb', borderRadius: '8px' }}>
-                      <p className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0' }}>{career}</p>
+                      <p className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{career}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div style={{ marginBottom: '0' }}>
-                <h4 className="text-2xl text-amber-700 mb-3" style={{ fontSize: '1.5rem', color: '#b45309', marginBottom: '12px', fontWeight: '600' }}>With Additional Education:</h4>
+                <h4 className="text-2xl text-amber-700 mb-3" style={{ fontSize: '1.5rem', color: '#b45309', marginBottom: '12px', fontWeight: '600',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>With Additional Education:</h4>
                 <div className="space-y-2" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {details.careerProgression.additional.map((career: string, index: number) => (
                     <div key={index} className="p-3 bg-amber-50 rounded-lg" style={{ padding: '12px', background: '#fffbeb', borderRadius: '8px' }}>
-                      <p className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0' }}>{career}</p>
+                      <p className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{career}</p>
                     </div>
                   ))}
                 </div>
@@ -482,11 +532,13 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
 
             {/* What You'll Learn */}
             <Card className="p-8 mb-6 bg-white" style={{ background: '#ffffff', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700' }}>WHAT YOU'LL LEARN</h3>
+              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>WHAT YOU'LL LEARN</h3>
               <div className="space-y-3" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {details.learningAreas.map((area: string, index: number) => (
                   <div key={index} className="p-4 bg-amber-50 rounded-lg" style={{ padding: '16px', background: '#fffbeb', borderRadius: '8px' }}>
-                    <p className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0' }}>{area}</p>
+                    <p className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{area}</p>
                   </div>
                 ))}
               </div>
@@ -494,34 +546,43 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
 
             {/* Special Requirements */}
             <Card className="p-8 mb-6 bg-amber-50 border-l-4 border-amber-600" style={{ background: '#fffbeb', padding: '32px', borderRadius: '12px', marginBottom: '24px', borderLeft: '4px solid #d97706' }}>
-              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700' }}>SPECIAL REQUIREMENTS</h3>
+              <h3 className="text-3xl text-slate-900 mb-4" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>SPECIAL REQUIREMENTS</h3>
               <div className="space-y-3" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 {details.specialRequirements.map((req: string, index: number) => (
-                  <p key={index} className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0' }}>• {req}</p>
+                  <p key={index} className="text-lg text-slate-700 break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>• {req}</p>
                 ))}
               </div>
             </Card>
 
             {/* Transfer Options */}
             <Card className="p-8 mb-6 bg-gradient-to-br from-[#004f71] to-[#00313c] text-white" style={{ background: 'linear-gradient(to bottom right, #004f71, #00313c)', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-              <h3 className="text-3xl mb-4" style={{ fontSize: '1.875rem', color: '#ffffff', marginBottom: '16px', fontWeight: '700' }}>TRANSFER OPTIONS</h3>
-              <p className="text-xl break-words" style={{ fontSize: '1.25rem', color: '#ffffff', wordWrap: 'break-word', margin: '0' }}>{details.transferOptions}</p>
+              <h3 className="text-3xl mb-4" style={{ fontSize: '1.875rem', color: '#ffffff', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>TRANSFER OPTIONS</h3>
+              <p className="text-xl break-words" style={{ fontSize: '1.25rem', color: '#ffffff', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{details.transferOptions}</p>
             </Card>
           </>
         )}
 
         {/* Contact Information - All Programs */}
         <Card className="p-8 mb-6 bg-white" style={{ background: '#ffffff', padding: '32px', borderRadius: '12px', marginBottom: '24px' }}>
-          <h3 className="text-3xl text-slate-900 mb-6" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '24px', fontWeight: '700' }}>CONTACT INFORMATION</h3>
+          <h3 className="text-3xl text-slate-900 mb-6" style={{ fontSize: '1.875rem', color: '#0f172a', marginBottom: '24px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>CONTACT INFORMATION</h3>
           <div className="space-y-6" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {details.contacts.map((contact: any, index: number) => (
               <div key={index} className="p-6 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg" style={{ padding: '24px', background: 'linear-gradient(to right, #ecfdf5, #f0fdfa)', borderRadius: '8px' }}>
-                <h4 className="text-2xl text-slate-900 mb-3 break-words" style={{ fontSize: '1.5rem', color: '#0f172a', marginBottom: '12px', wordWrap: 'break-word', fontWeight: '600' }}>{contact.name}</h4>
+                <h4 className="text-2xl text-slate-900 mb-3 break-words" style={{ fontSize: '1.5rem', color: '#0f172a', marginBottom: '12px', wordWrap: 'break-word', fontWeight: '600',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{contact.name}</h4>
                 <div className="space-y-1 text-slate-700" style={{ display: 'flex', flexDirection: 'column', gap: '4px', color: '#334155' }}>
-                  <p className="text-lg break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0' }}>Email: {contact.email}</p>
-                  <p className="text-lg break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0' }}>Phone: {contact.phone}</p>
+                  <p className="text-lg break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Email: {contact.email}</p>
+                  <p className="text-lg break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Phone: {contact.phone}</p>
                   {contact.appointments && (
-                    <p className="text-lg break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0' }}>Appointments: {contact.appointments}</p>
+                    <p className="text-lg break-words" style={{ fontSize: '1.125rem', color: '#334155', wordWrap: 'break-word', margin: '0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Appointments: {contact.appointments}</p>
                   )}
                 </div>
               </div>
@@ -531,12 +592,15 @@ export function ProgramDetail({ program, onNavigate, onBack, onHome, onWelcome, 
 
         {/* Website */}
         <Card className="p-8 bg-gradient-to-br from-[#004f71] to-[#00313c] text-white" style={{ background: 'linear-gradient(to bottom right, #004f71, #00313c)', padding: '32px', borderRadius: '12px' }}>
-          <h3 className="text-3xl mb-4" style={{ fontSize: '1.875rem', color: '#ffffff', marginBottom: '16px', fontWeight: '700' }}>LEARN MORE</h3>
-          <p className="text-xl mb-3" style={{ fontSize: '1.25rem', color: '#ffffff', marginBottom: '12px', margin: '0 0 12px 0' }}>Visit the program website:</p>
+          <h3 className="text-3xl mb-4" style={{ fontSize: '1.875rem', color: '#ffffff', marginBottom: '16px', fontWeight: '700',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>LEARN MORE</h3>
+          <p className="text-xl mb-3" style={{ fontSize: '1.25rem', color: '#ffffff', marginBottom: '12px', margin: '0 0 12px 0',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Visit the program website:</p>
           <a
             href={`https://${details.website}`}
             className="text-2xl text-[#ffb600] underline hover:text-[#ffb600]/80 break-all inline-block"
-            style={{ fontSize: '1.5rem', color: '#ffb600', textDecoration: 'underline', wordWrap: 'break-word', display: 'inline-block' }}
+            style={{ fontSize: '1.5rem', color: '#ffb600', textDecoration: 'underline', wordWrap: 'break-word', display: 'inline-block',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
             target="_blank"
             rel="noopener noreferrer"
           >

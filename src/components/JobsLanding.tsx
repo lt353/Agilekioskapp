@@ -135,26 +135,27 @@ export function JobsLanding({ onNavigate, onBack, onHome, onWelcome, canGoBack }
                     fontSize: '1rem',
                     marginBottom: '8px',
                     color: '#ffffff',
-                    fontWeight: '600'
+                    fontWeight: '600',
+                  fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
                   }}>📍 Good Jobs Hawaii</h2>
                   <p className="text-sm mb-1" style={{
                     fontSize: '0.875rem',
                     marginBottom: '4px',
-                    color: '#ffffff'
-                  }}>
-                    <span className="font-semibold" style={{ fontWeight: '600' }}>Room 131, 1st Floor</span> - Marshall Norman
+                    color: '#ffffff',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                    <span className="font-semibold" style={ fontWeight: '600', fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif' }>Room 131, 1st Floor</span> - Marshall Norman
                   </p>
                   <p className="text-xs text-white/90 mb-2" style={{
                     fontSize: '0.75rem',
                     color: 'rgba(255, 255, 255, 0.9)',
-                    marginBottom: '8px'
-                  }}>
+                    marginBottom: '8px',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
                     Get personalized help with job searches and career planning
                   </p>
                   <p className="text-xs text-white/80" style={{
                     fontSize: '0.75rem',
-                    color: 'rgba(255, 255, 255, 0.8)'
-                  }}>
+                    color: 'rgba(255, 255, 255, 0.8)',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
                     Tap for room details →
                   </p>
                 </div>
@@ -173,8 +174,8 @@ export function JobsLanding({ onNavigate, onBack, onHome, onWelcome, canGoBack }
                       fontSize: '8px',
                       textAlign: 'center',
                       color: '#004f71',
-                      marginTop: '4px'
-                    }}>Scan for info</p>
+                      marginTop: '4px',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Scan for info</p>
                   </div>
                 )}
               </div>
@@ -203,22 +204,23 @@ export function JobsLanding({ onNavigate, onBack, onHome, onWelcome, canGoBack }
                     fontSize: '1rem',
                     marginBottom: '4px',
                     color: '#004f71',
-                    fontWeight: '600'
+                    fontWeight: '600',
+                  fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
                   }}>
                     CareerLink Services
                   </h2>
                   <p className="text-xs mb-2" style={{
                     fontSize: '0.75rem',
                     marginBottom: '8px',
-                    color: '#5a5a5a'
-                  }}>
+                    color: '#5a5a5a',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
                     Job announcements, resume & cover letter help, job prep, and internships for students and alumni.
                   </p>
                   <div className="space-y-0.5 text-xs" style={{
                     fontSize: '0.75rem',
-                    color: '#5a5a5a'
-                  }}>
-                    <p style={{ color: '#5a5a5a' }}><span className="font-semibold" style={{ fontWeight: '600' }}>Location:</span> TLC Building</p>
+                    color: '#5a5a5a',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                    <p style={{ color: '#5a5a5a' }}><span className="font-semibold" style={ fontWeight: '600', fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif' }>Location:</span> TLC Building</p>
                     <p className="flex items-center gap-1" style={{
                       display: 'flex',
                       alignItems: 'center',
@@ -255,8 +257,8 @@ export function JobsLanding({ onNavigate, onBack, onHome, onWelcome, canGoBack }
                       fontSize: '8px',
                       textAlign: 'center',
                       color: '#789904',
-                      marginTop: '4px'
-                    }}>Scan to visit</p>
+                      marginTop: '4px',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Scan to visit</p>
                   </div>
                 )}
               </div>
@@ -286,20 +288,21 @@ export function JobsLanding({ onNavigate, onBack, onHome, onWelcome, canGoBack }
                     fontSize: '1rem',
                     marginBottom: '4px',
                     color: '#ffffff',
-                    fontWeight: '600'
+                    fontWeight: '600',
+                  fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
                   }}>🌐 SECE Online Job Services</h2>
                   <p className="text-xs mb-2" style={{
                     fontSize: '0.75rem',
                     marginBottom: '8px',
-                    color: '#ffffff'
-                  }}>
+                    color: '#ffffff',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
                     UH Student Employment & Career Engagement connects students with employers online.
                   </p>
                   <p className="text-xs mb-2" style={{
                     fontSize: '0.75rem',
                     marginBottom: '8px',
-                    color: '#ffffff'
-                  }}>
+                    color: '#ffffff',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
                     UH and Non-UH Employers post jobs on SECE
                   </p>
                   <div className="flex items-center gap-1.5 text-xs bg-white/20 rounded px-2 py-1" style={{
@@ -309,8 +312,8 @@ export function JobsLanding({ onNavigate, onBack, onHome, onWelcome, canGoBack }
                     fontSize: '0.75rem',
                     backgroundColor: 'rgba(255, 255, 255, 0.2)',
                     borderRadius: '6px',
-                    padding: '4px 8px'
-                  }}>
+                    padding: '4px 8px',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
                     <ExternalLink className="w-3 h-3" style={{ width: '12px', height: '12px' }} />
                     <span className="font-semibold" style={{ fontWeight: '600', color: '#ffffff' }}>hawaii.edu/sece/</span>
                   </div>
@@ -330,8 +333,8 @@ export function JobsLanding({ onNavigate, onBack, onHome, onWelcome, canGoBack }
                       fontSize: '8px',
                       textAlign: 'center',
                       color: '#dd8a03',
-                      marginTop: '4px'
-                    }}>Scan to visit</p>
+                      marginTop: '4px',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Scan to visit</p>
                   </div>
                 )}
               </div>
@@ -361,11 +364,13 @@ export function JobsLanding({ onNavigate, onBack, onHome, onWelcome, canGoBack }
               alignItems: 'center',
               justifyContent: 'center',
               fontSize: '1.25rem',
-              fontWeight: '600'
+              fontWeight: '600',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
             }}
           >
             <Briefcase className="w-6 h-6 mr-2" style={{ width: '24px', height: '24px', marginRight: '8px' }} />
-            <span className="text-xl" style={{ fontSize: '1.25rem', color: '#ffffff' }}>View Current Job Openings</span>
+            <span className="text-xl" style={{ fontSize: '1.25rem', color: '#ffffff',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>View Current Job Openings</span>
           </Button>
         </motion.div>
       </div>

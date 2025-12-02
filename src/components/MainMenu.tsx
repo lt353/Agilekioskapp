@@ -64,7 +64,8 @@ export function MainMenu({ onNavigate, onWelcome }: MainMenuProps) {
                 border: 'none',
                 cursor: 'pointer',
                 fontSize: '14px',
-                fontWeight: '500'
+                fontWeight: '500',
+              fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
               }}
             >
               Start Screen
@@ -92,12 +93,13 @@ export function MainMenu({ onNavigate, onWelcome }: MainMenuProps) {
                 fontSize: '1.875rem',
                 color: '#ffffff',
                 marginBottom: '4px',
-                fontWeight: '600'
+                fontWeight: '600',
+              fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
               }}>Ka Lama</h1>
               <p className="text-lg text-white/90" style={{
                 fontSize: '1.125rem',
-                color: 'rgba(255, 255, 255, 0.9)'
-              }}>What would you like to explore?</p>
+                color: 'rgba(255, 255, 255, 0.9)',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>What would you like to explore?</p>
             </div>
           </div>
         </div>
@@ -139,14 +141,14 @@ export function MainMenu({ onNavigate, onWelcome }: MainMenuProps) {
                     fontSize: '2.25rem',
                     textAlign: 'center',
                     fontWeight: '600',
-                    color: '#ffffff'
-                  }}>{item.title}</h2>
+                    color: '#ffffff',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{item.title}</h2>
                   {!item.active && (
                     <p className="text-base text-white/80 mt-2" style={{
                       fontSize: '1rem',
                       color: 'rgba(255, 255, 255, 0.8)',
-                      marginTop: '8px'
-                    }}>Future Feature</p>
+                      marginTop: '8px',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Future Feature</p>
                   )}
                 </div>
               </Card>
@@ -168,8 +170,8 @@ export function MainMenu({ onNavigate, onWelcome }: MainMenuProps) {
       >
         <p className="text-base" style={{
           color: '#5a5a5a',
-          fontSize: '1rem'
-        }}>
+          fontSize: '1rem',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
           This screen will automatically return to the welcome screen after 60 seconds of inactivity
         </p>
       </motion.div>

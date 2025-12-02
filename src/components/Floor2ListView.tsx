@@ -112,10 +112,11 @@ export function Floor2ListView({ onNavigate, onBack, onHome, onWelcome, canGoBac
             borderRadius: '8px',
             cursor: 'pointer',
             boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-            width: '100%'
-          }}
+            width: '100%',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
         >
-          <span style={{ color: '#ffffff', fontSize: '16px', fontWeight: 600 }}>
+          <span style={{ color: '#ffffff', fontSize: '16px', fontWeight: 600,
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
             Switch to Map View
           </span>
         </Button>
@@ -154,8 +155,8 @@ export function Floor2ListView({ onNavigate, onBack, onHome, onWelcome, canGoBac
               fontSize: '16px',
               width: '100%',
               backgroundColor: '#ffffff',
-              color: '#000000'
-            }}
+              color: '#000000',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
           />
         </div>
 
@@ -200,8 +201,8 @@ export function Floor2ListView({ onNavigate, onBack, onHome, onWelcome, canGoBac
                       paddingLeft: '4px',
                       paddingRight: '4px',
                       fontWeight: 700,
-                      marginBottom: '4px'
-                    }}
+                      marginBottom: '4px',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
                   >
                     {category}
                   </h3>
@@ -266,8 +267,8 @@ export function Floor2ListView({ onNavigate, onBack, onHome, onWelcome, canGoBac
                               style={{
                                 color: '#004f71',
                                 fontWeight: 700,
-                                fontSize: '16px'
-                              }}
+                                fontSize: '16px',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
                             >
                               Room {room.number}
                             </span>
@@ -277,7 +278,8 @@ export function Floor2ListView({ onNavigate, onBack, onHome, onWelcome, canGoBac
                                 style={{
                                   color: '#004f71',
                                   fontSize: '16px',
-                                  fontWeight: 400
+                                  fontWeight: 400,
+                                fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
                                 }}
                               >
                                 - {room.occupant}
@@ -289,7 +291,8 @@ export function Floor2ListView({ onNavigate, onBack, onHome, onWelcome, canGoBac
                                 style={{
                                   color: '#004f71',
                                   fontSize: '16px',
-                                  fontWeight: 400
+                                  fontWeight: 400,
+                                fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
                                 }}
                               >
                                 - {room.name}
@@ -302,8 +305,8 @@ export function Floor2ListView({ onNavigate, onBack, onHome, onWelcome, canGoBac
                               style={{
                                 fontSize: '14px',
                                 color: '#65665c',
-                                margin: 0
-                              }}
+                                margin: 0,
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
                             >
                               {room.department}
                             </p>
@@ -314,8 +317,8 @@ export function Floor2ListView({ onNavigate, onBack, onHome, onWelcome, canGoBac
                               style={{
                                 fontSize: '14px',
                                 color: '#65665c',
-                                margin: 0
-                              }}
+                                margin: 0,
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
                             >
                               {room.description}
                             </p>
@@ -353,7 +356,8 @@ export function Floor2ListView({ onNavigate, onBack, onHome, onWelcome, canGoBac
                 fontSize: '14px',
                 color: '#999999',
                 margin: 0,
-                fontWeight: 400
+                fontWeight: 400,
+              fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
               }}
             >
               End of Floor 2 Directory

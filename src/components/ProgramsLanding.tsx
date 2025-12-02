@@ -109,12 +109,13 @@ export function ProgramsLanding({ onNavigate, onBack, onHome, onWelcome, canGoBa
             color: '#003e56',
             fontSize: '1.25rem',
             marginBottom: '8px',
-            fontWeight: '600'
+            fontWeight: '600',
+          fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
           }}>Choose a program to learn more:</h2>
           <p className="text-base" style={{
             color: '#004f71',
-            fontSize: '1rem'
-          }}>Four pathways to your future success</p>
+            fontSize: '1rem',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Four pathways to your future success</p>
         </motion.div>
 
         <div className="space-y-3">
@@ -175,20 +176,21 @@ export function ProgramsLanding({ onNavigate, onBack, onHome, onWelcome, canGoBa
                       fontSize: '1rem',
                       color: '#0f172a',
                       marginBottom: '4px',
-                      fontWeight: '600'
+                      fontWeight: '600',
+                    fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
                     }}>{program.title}</h3>
                     <p className="text-sm text-slate-700 mb-2 line-clamp-2" style={{
                       fontSize: '0.875rem',
                       color: '#334155',
-                      marginBottom: '8px'
-                    }}>{program.description}</p>
+                      marginBottom: '8px',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{program.description}</p>
 
                     <div className="flex gap-3 text-xs text-slate-600" style={{
                       display: 'flex',
                       gap: '12px',
                       fontSize: '0.75rem',
-                      color: '#475569'
-                    }}>
+                      color: '#475569',
+            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
                       <div>📜 {program.degrees.join(', ')}</div>
                       <div>⏱️ {program.duration}</div>
                     </div>

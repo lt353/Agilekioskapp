@@ -336,10 +336,28 @@ export function AttractMode({ onTouch }: AttractModeProps) {
 
   if (isLoading) {
     return (
-      <div className="size-full flex items-center justify-center bg-gradient-to-br from-[#004f71] to-[#00313c]">
-        <div className="text-center">
-          <div className="text-white text-4xl mb-4">UHMC Ka Lama</div>
-          <div className="text-white text-2xl">Loading...</div>
+      <div className="size-full flex items-center justify-center bg-gradient-to-br from-[#004f71] to-[#00313c]" style={{
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: 'linear-gradient(to bottom right, #004f71, #00313c)'
+      }}>
+        <div className="text-center" style={{
+          textAlign: 'center'
+        }}>
+          <div className="text-white text-4xl mb-4" style={{
+            color: '#ffffff',
+            fontSize: '36px',
+            marginBottom: '16px',
+            fontWeight: '700'
+          }}>UHMC Ka Lama</div>
+          <div className="text-white text-2xl" style={{
+            color: '#ffffff',
+            fontSize: '24px',
+            fontWeight: '500'
+          }}>Loading...</div>
         </div>
       </div>
     );
@@ -347,9 +365,24 @@ export function AttractMode({ onTouch }: AttractModeProps) {
 
   if (slides.length === 0) {
     return (
-      <div className="size-full flex items-center justify-center bg-gradient-to-br from-[#004f71] to-[#00313c]">
-        <div className="text-center text-white">
-          <p className="text-3xl">No content available</p>
+      <div className="size-full flex items-center justify-center bg-gradient-to-br from-[#004f71] to-[#00313c]" style={{
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: 'linear-gradient(to bottom right, #004f71, #00313c)'
+      }}>
+        <div className="text-center text-white" style={{
+          textAlign: 'center',
+          color: '#ffffff'
+        }}>
+          <p className="text-3xl" style={{
+            fontSize: '30px',
+            margin: 0,
+            fontWeight: '600',
+            color: '#ffffff'
+          }}>No content available</p>
         </div>
       </div>
     );
@@ -362,6 +395,13 @@ export function AttractMode({ onTouch }: AttractModeProps) {
       onClick={onTouch}
       onTouchStart={onTouch}
       className="size-full cursor-pointer relative overflow-hidden"
+      style={{
+        width: '100%',
+        height: '100%',
+        cursor: 'pointer',
+        position: 'relative',
+        overflow: 'hidden'
+      }}
     >
       <AnimatePresence mode="wait">
         <motion.div
@@ -371,6 +411,13 @@ export function AttractMode({ onTouch }: AttractModeProps) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
           className="absolute inset-0"
+          style={{
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0
+          }}
         >
           {currentSlideData.type === 'static' ? (
             <StaticSlideContent slide={currentSlideData} />
@@ -381,13 +428,28 @@ export function AttractMode({ onTouch }: AttractModeProps) {
       </AnimatePresence>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 z-10" style={{
+        position: 'absolute',
+        bottom: '32px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        display: 'flex',
+        gap: '8px',
+        zIndex: 10
+      }}>
         {slides.map((_, index) => (
           <div
             key={index}
             className={`h-2 rounded-full transition-all duration-500 ${
               index === currentSlide ? 'w-8 bg-white' : 'w-2 bg-white/50'
             }`}
+            style={{
+              height: '8px',
+              borderRadius: '9999px',
+              transition: 'all 0.5s',
+              width: index === currentSlide ? '32px' : '8px',
+              backgroundColor: index === currentSlide ? '#ffffff' : 'rgba(255, 255, 255, 0.5)'
+            }}
           />
         ))}
       </div>
@@ -397,6 +459,17 @@ export function AttractMode({ onTouch }: AttractModeProps) {
 
 // Static slide component
 function StaticSlideContent({ slide }: { slide: StaticSlide }) {
+  // Parse gradient colors from the className format to inline CSS
+  const gradientMap: Record<string, string> = {
+    'from-[#004f71]/70 via-[#00313c]/60 to-[#004f71]/70': 'linear-gradient(to bottom right, rgba(0, 79, 113, 0.7), rgba(0, 49, 60, 0.6), rgba(0, 79, 113, 0.7))',
+    'from-[#004f71]/85 via-[#00313c]/80 to-[#004f71]/85': 'linear-gradient(to bottom right, rgba(0, 79, 113, 0.85), rgba(0, 49, 60, 0.8), rgba(0, 79, 113, 0.85))',
+    'from-[#00313c]/70 via-[#004f71]/60 to-[#00313c]/70': 'linear-gradient(to bottom right, rgba(0, 49, 60, 0.7), rgba(0, 79, 113, 0.6), rgba(0, 49, 60, 0.7))',
+    'from-[#004f71]/70 via-[#789904]/40 to-[#004f71]/70': 'linear-gradient(to bottom right, rgba(0, 79, 113, 0.7), rgba(120, 153, 4, 0.4), rgba(0, 79, 113, 0.7))',
+    'from-[#789904]/50 via-[#004f71]/60 to-[#789904]/50': 'linear-gradient(to bottom right, rgba(120, 153, 4, 0.5), rgba(0, 79, 113, 0.6), rgba(120, 153, 4, 0.5))',
+  };
+
+  const gradientStyle = gradientMap[slide.gradientColors] || 'linear-gradient(to bottom right, rgba(0, 79, 113, 0.7), rgba(0, 49, 60, 0.6), rgba(0, 79, 113, 0.7))';
+
   return (
     <>
       {/* Background Image */}
@@ -407,15 +480,44 @@ function StaticSlideContent({ slide }: { slide: StaticSlide }) {
       />
 
       {/* Gradient Overlay */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${slide.gradientColors}`} />
+      <div className={`absolute inset-0 bg-gradient-to-br ${slide.gradientColors}`} style={{
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+        background: gradientStyle
+      }} />
 
       {/* Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-8 text-center">
+      <div className="absolute inset-0 flex flex-col items-center justify-center px-8 text-center" style={{
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingLeft: '32px',
+        paddingRight: '32px',
+        textAlign: 'center'
+      }}>
         <motion.h1
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
           className="text-4xl text-white mb-6 max-w-md leading-tight whitespace-pre-line"
+          style={{
+            fontSize: '36px',
+            color: '#ffffff',
+            marginBottom: '24px',
+            maxWidth: '28rem',
+            lineHeight: '1.25',
+            whiteSpace: 'pre-line',
+            fontWeight: '700'
+          }}
         >
           {slide.title}
         </motion.h1>
@@ -425,6 +527,12 @@ function StaticSlideContent({ slide }: { slide: StaticSlide }) {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.6 }}
           className="text-2xl text-white/90 mb-8"
+          style={{
+            fontSize: '24px',
+            color: 'rgba(255, 255, 255, 0.9)',
+            marginBottom: '32px',
+            fontWeight: '500'
+          }}
         >
           {slide.subtitle}
         </motion.p>
@@ -438,6 +546,17 @@ function StaticSlideContent({ slide }: { slide: StaticSlide }) {
           className={`absolute left-1/2 transform -translate-x-1/2 text-xl text-white/80 z-20 ${
             slide.id === 'inspiration' ? 'top-8' : 'bottom-16'
           }`}
+          style={{
+            position: 'absolute',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            fontSize: '20px',
+            color: 'rgba(255, 255, 255, 0.8)',
+            zIndex: 20,
+            top: slide.id === 'inspiration' ? '32px' : 'auto',
+            bottom: slide.id === 'inspiration' ? 'auto' : '64px',
+            fontWeight: '600'
+          }}
         >
           👆 Touch to begin
         </motion.div>

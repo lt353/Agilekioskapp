@@ -337,8 +337,8 @@ export function RoomDetail({ room, onBack, onHome, onWelcome, canGoBack, onNavig
                   boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
                   marginBottom: '8px',
                   fontWeight: '600',
-                  lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
+                  lineHeight: '1.25rem'
+                }}
               >
                 {getTypeLabel(roomData.type)}
               </div>
@@ -407,8 +407,8 @@ export function RoomDetail({ room, onBack, onHome, onWelcome, canGoBack, onNavig
                     whiteSpace: 'nowrap',
                     boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
                     fontWeight: '600',
-                    lineHeight: '1rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                    lineHeight: '1rem'
+                  }}>
                     {room.roomNumber}
                   </div>
                 </motion.div>
@@ -421,8 +421,8 @@ export function RoomDetail({ room, onBack, onHome, onWelcome, canGoBack, onNavig
               fontSize: '0.75rem',
               color: '#65665c',
               fontWeight: '400',
-              lineHeight: '1rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+              lineHeight: '1rem'
+            }}>
               Floor {roomData.floor} - Ka Lama Building
             </div>
           </Card>
@@ -444,8 +444,8 @@ export function RoomDetail({ room, onBack, onHome, onWelcome, canGoBack, onNavig
                 color: '#004f71',
                 marginBottom: '8px',
                 fontWeight: '700',
-                lineHeight: '2rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                lineHeight: '2rem'
+              }}>
                 Room {room.roomNumber} - {roomData.name}
               </h3>
               {roomData.description && (
@@ -454,8 +454,8 @@ export function RoomDetail({ room, onBack, onHome, onWelcome, canGoBack, onNavig
                   color: '#65665c',
                   marginTop: '8px',
                   fontWeight: '400',
-                  lineHeight: '1.5rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{roomData.description}</p>
+                  lineHeight: '1.5rem'
+                }}>{roomData.description}</p>
               )}
             </div>
 
@@ -477,14 +477,14 @@ export function RoomDetail({ room, onBack, onHome, onWelcome, canGoBack, onNavig
                   color: '#65665c',
                   marginBottom: '4px',
                   fontWeight: '500',
-                  lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Location</div>
+                  lineHeight: '1.25rem'
+                }}>Location</div>
                 <div className="text-lg text-[#004f71]" style={{
                   fontSize: '1.125rem',
                   color: '#004f71',
                   fontWeight: '600',
-                  lineHeight: '1.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Floor {roomData.floor}, Ka Lama Building</div>
+                  lineHeight: '1.75rem'
+                }}>Floor {roomData.floor}, Ka Lama Building</div>
               </div>
 
               {roomData.occupant && (
@@ -499,14 +499,14 @@ export function RoomDetail({ room, onBack, onHome, onWelcome, canGoBack, onNavig
                     color: '#65665c',
                     marginBottom: '4px',
                     fontWeight: '500',
-                    lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Occupant</div>
+                    lineHeight: '1.25rem'
+                  }}>Occupant</div>
                   <div className="text-lg text-[#004f71]" style={{
                     fontSize: '1.125rem',
                     color: '#004f71',
                     fontWeight: '600',
-                    lineHeight: '1.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{roomData.occupant}</div>
+                    lineHeight: '1.75rem'
+                  }}>{roomData.occupant}</div>
                 </div>
               )}
 
@@ -522,14 +522,14 @@ export function RoomDetail({ room, onBack, onHome, onWelcome, canGoBack, onNavig
                     color: '#65665c',
                     marginBottom: '4px',
                     fontWeight: '500',
-                    lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Department</div>
+                    lineHeight: '1.25rem'
+                  }}>Department</div>
                   <div className="text-lg text-[#004f71]" style={{
                     fontSize: '1.125rem',
                     color: '#004f71',
                     fontWeight: '600',
-                    lineHeight: '1.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{roomData.department}</div>
+                    lineHeight: '1.75rem'
+                  }}>{roomData.department}</div>
                 </div>
               )}
 
@@ -544,14 +544,14 @@ export function RoomDetail({ room, onBack, onHome, onWelcome, canGoBack, onNavig
                   color: '#65665c',
                   marginBottom: '4px',
                   fontWeight: '500',
-                  lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Hours</div>
+                  lineHeight: '1.25rem'
+                }}>Hours</div>
                 <div className="text-lg text-[#004f71]" style={{
                   fontSize: '1.125rem',
                   color: '#004f71',
                   fontWeight: '600',
-                  lineHeight: '1.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{roomData.hours}</div>
+                  lineHeight: '1.75rem'
+                }}>{roomData.hours}</div>
               </div>
 
               {roomData.phone && (
@@ -566,14 +566,14 @@ export function RoomDetail({ room, onBack, onHome, onWelcome, canGoBack, onNavig
                     color: '#65665c',
                     marginBottom: '4px',
                     fontWeight: '500',
-                    lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Phone</div>
+                    lineHeight: '1.25rem'
+                  }}>Phone</div>
                   <div className="text-lg text-[#004f71]" style={{
                     fontSize: '1.125rem',
                     color: '#004f71',
                     fontWeight: '600',
-                    lineHeight: '1.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{roomData.phone}</div>
+                    lineHeight: '1.75rem'
+                  }}>{roomData.phone}</div>
                 </div>
               )}
 
@@ -589,14 +589,14 @@ export function RoomDetail({ room, onBack, onHome, onWelcome, canGoBack, onNavig
                     color: '#65665c',
                     marginBottom: '4px',
                     fontWeight: '500',
-                    lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Email</div>
+                    lineHeight: '1.25rem'
+                  }}>Email</div>
                   <div className="text-lg text-[#004f71]" style={{
                     fontSize: '1.125rem',
                     color: '#004f71',
                     fontWeight: '600',
-                    lineHeight: '1.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{roomData.email}</div>
+                    lineHeight: '1.75rem'
+                  }}>{roomData.email}</div>
                 </div>
               )}
             </div>

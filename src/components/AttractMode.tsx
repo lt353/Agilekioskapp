@@ -351,14 +351,12 @@ export function AttractMode({ onTouch }: AttractModeProps) {
             color: '#ffffff',
             fontSize: '36px',
             marginBottom: '16px',
-            fontWeight: '700',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+            fontWeight: '700'
           }}>UHMC Ka Lama</div>
           <div className="text-white text-2xl" style={{
             color: '#ffffff',
             fontSize: '24px',
-            fontWeight: '500',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+            fontWeight: '500'
           }}>Loading...</div>
         </div>
       </div>
@@ -383,8 +381,7 @@ export function AttractMode({ onTouch }: AttractModeProps) {
             fontSize: '30px',
             margin: 0,
             fontWeight: '600',
-            color: '#ffffff',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+            color: '#ffffff'
           }}>No content available</p>
         </div>
       </div>
@@ -519,8 +516,7 @@ function StaticSlideContent({ slide }: { slide: StaticSlide }) {
             maxWidth: '28rem',
             lineHeight: '1.25',
             whiteSpace: 'pre-line',
-            fontWeight: '700',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+            fontWeight: '700'
           }}
         >
           {slide.title}
@@ -535,8 +531,7 @@ function StaticSlideContent({ slide }: { slide: StaticSlide }) {
             fontSize: '24px',
             color: 'rgba(255, 255, 255, 0.9)',
             marginBottom: '32px',
-            fontWeight: '500',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+            fontWeight: '500'
           }}
         >
           {slide.subtitle}
@@ -560,8 +555,7 @@ function StaticSlideContent({ slide }: { slide: StaticSlide }) {
             zIndex: 20,
             top: slide.id === 'inspiration' ? '32px' : 'auto',
             bottom: slide.id === 'inspiration' ? 'auto' : '64px',
-            fontWeight: '600',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+            fontWeight: '600'
           }}
         >
           👆 Touch to begin

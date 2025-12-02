@@ -55,13 +55,12 @@ export function DirectoryLanding({ onNavigate, onBack, onHome, onWelcome, canGoB
             fontSize: '1.875rem',
             color: '#004f71',
             marginBottom: '12px',
-            fontWeight: '600',
-          fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+            fontWeight: '600'
           }}>UHMC Ka Lama Building</h2>
           <p className="text-xl text-[#65665c]" style={{
             fontSize: '1.25rem',
-            color: '#65665c',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>What would you like to explore?</p>
+            color: '#65665c'
+          }}>What would you like to explore?</p>
         </motion.div>
 
         {/* Buttons */}
@@ -90,13 +89,12 @@ export function DirectoryLanding({ onNavigate, onBack, onHome, onWelcome, canGoB
                   fontSize: '1.5rem',
                   color: '#ffffff',
                   marginBottom: '8px',
-                  fontWeight: '600',
-                fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+                  fontWeight: '600'
                 }}>Browse by Floor</h3>
                 <p className="text-base text-white/80" style={{
                   fontSize: '1rem',
-                  color: 'rgba(255, 255, 255, 0.8)',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>View interactive floor maps</p>
+                  color: 'rgba(255, 255, 255, 0.8)'
+                }}>View interactive floor maps</p>
               </div>
             </Card>
           </motion.div>
@@ -125,13 +123,12 @@ export function DirectoryLanding({ onNavigate, onBack, onHome, onWelcome, canGoB
                   fontSize: '1.5rem',
                   color: '#ffffff',
                   marginBottom: '8px',
-                  fontWeight: '600',
-                fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+                  fontWeight: '600'
                 }}>Search by Name</h3>
                 <p className="text-base text-white/80" style={{
                   fontSize: '1rem',
-                  color: 'rgba(255, 255, 255, 0.8)',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Find faculty or staff member</p>
+                  color: 'rgba(255, 255, 255, 0.8)'
+                }}>Find faculty or staff member</p>
               </div>
             </Card>
           </motion.div>
@@ -155,8 +152,8 @@ export function DirectoryLanding({ onNavigate, onBack, onHome, onWelcome, canGoB
           }}>
             <p className="text-base text-white" style={{
               fontSize: '1rem',
-              color: '#ffffff',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+              color: '#ffffff'
+            }}>
               Need help? Visit Admissions Room 201
             </p>
           </div>

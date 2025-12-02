@@ -68,14 +68,14 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                 marginBottom: '12px',
                 color: '#ffffff',
                 fontWeight: '700',
-                lineHeight: '2rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{job.title}</h1>
+                lineHeight: '2rem'
+              }}>{job.title}</h1>
               <div className="space-y-2 text-sm" style={{
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '8px',
-                fontSize: '0.875rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                fontSize: '0.875rem'
+              }}>
                 <p className="flex items-center gap-2" style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -83,8 +83,8 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                   color: '#ffffff',
                   fontSize: '0.875rem',
                   fontWeight: '400',
-                  lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                  lineHeight: '1.25rem'
+                }}>
                   <Building className="w-4 h-4" style={{ width: '16px', height: '16px', color: '#ffffff' }} />
                   <span className="font-semibold" style={{ fontWeight: '600', color: '#ffffff' }}>{job.company}</span>
                 </p>
@@ -95,8 +95,8 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                   color: '#ffffff',
                   fontSize: '0.875rem',
                   fontWeight: '400',
-                  lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                  lineHeight: '1.25rem'
+                }}>
                   <MapPin className="w-4 h-4" style={{ width: '16px', height: '16px', color: '#ffffff' }} />
                   {job.location}
                 </p>
@@ -112,8 +112,8 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                     color: '#ffffff',
                     fontSize: '0.875rem',
                     fontWeight: '400',
-                    lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                    lineHeight: '1.25rem'
+                  }}>
                     <DollarSign className="w-4 h-4" style={{ width: '16px', height: '16px', color: '#ffffff' }} />
                     {job.wage}
                   </p>
@@ -124,8 +124,8 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                     color: '#ffffff',
                     fontSize: '0.875rem',
                     fontWeight: '400',
-                    lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                    lineHeight: '1.25rem'
+                  }}>
                     <Clock className="w-4 h-4" style={{ width: '16px', height: '16px', color: '#ffffff' }} />
                     {job.type}
                   </p>
@@ -135,8 +135,8 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                     fontSize: '0.75rem',
                     color: 'rgba(255, 255, 255, 0.9)',
                     fontWeight: '400',
-                    lineHeight: '1rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                    lineHeight: '1rem'
+                  }}>
                     Hours: {job.min_hours && `${job.min_hours}`}{job.min_hours && job.max_hours && '-'}{job.max_hours && `${job.max_hours}`} hours/week
                   </p>
                 )}
@@ -150,8 +150,8 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                     fontSize: '0.75rem',
                     color: 'rgba(255, 255, 255, 0.8)',
                     fontWeight: '400',
-                    lineHeight: '1rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Posted: {formatPostedDate(job.posted_date)}</p>
+                    lineHeight: '1rem'
+                  }}>Posted: {formatPostedDate(job.posted_date)}</p>
                   {job.closing_date && (
                     <p className="text-xs text-white/80 flex items-center gap-1" style={{
                       fontSize: '0.75rem',
@@ -160,8 +160,8 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                       alignItems: 'center',
                       gap: '4px',
                       fontWeight: '400',
-                      lineHeight: '1rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                      lineHeight: '1rem'
+                    }}>
                       <Calendar className="w-3 h-3" style={{ width: '12px', height: '12px', color: 'rgba(255, 255, 255, 0.8)' }} />
                       Closes: {new Date(job.closing_date).toLocaleDateString()}
                     </p>
@@ -172,8 +172,8 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                     fontSize: '0.75rem',
                     color: 'rgba(255, 255, 255, 0.7)',
                     fontWeight: '400',
-                    lineHeight: '1rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Job #: {job.job_number}</p>
+                    lineHeight: '1rem'
+                  }}>Job #: {job.job_number}</p>
                 )}
               </div>
             </Card>
@@ -197,8 +197,8 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                 color: '#004f71',
                 marginBottom: '12px',
                 fontWeight: '600',
-                lineHeight: '1.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                lineHeight: '1.75rem'
+              }}>
                 Job Description:
               </h2>
               <p className="text-base mb-4" style={{
@@ -206,8 +206,8 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                 color: '#4a4a4a',
                 marginBottom: '16px',
                 fontWeight: '400',
-                lineHeight: '1.5rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                lineHeight: '1.5rem'
+              }}>
                 {job.description}
               </p>
 
@@ -218,8 +218,8 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                     color: '#004f71',
                     marginBottom: '8px',
                     fontWeight: '600',
-                    lineHeight: '1.5rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                    lineHeight: '1.5rem'
+                  }}>
                     Responsibilities:
                   </h3>
                   <ul className="space-y-1 mb-4" style={{
@@ -236,15 +236,13 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                         alignItems: 'flex-start',
                         gap: '8px',
                         fontWeight: '400',
-                        lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                        lineHeight: '1.25rem'
+                      }}>
                         <span className="text-[#789904] font-bold" style={{
                           color: '#789904',
-                          fontWeight: '700',
-                        fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+                          fontWeight: '700'
                         }}>•</span>
-                        <span style={{ color: '#4a4a4a', fontSize: '0.875rem', fontWeight: '400',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{resp}</span>
+                        <span style={{ color: '#4a4a4a', fontSize: '0.875rem', fontWeight: '400' }}>{resp}</span>
                       </li>
                     ))}
                   </ul>
@@ -272,8 +270,8 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                   color: '#004f71',
                   marginBottom: '12px',
                   fontWeight: '600',
-                  lineHeight: '1.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                  lineHeight: '1.75rem'
+                }}>
                   Qualifications:
                 </h2>
                 <ul className="space-y-1" style={{
@@ -289,15 +287,13 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                       alignItems: 'flex-start',
                       gap: '8px',
                       fontWeight: '400',
-                      lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                      lineHeight: '1.25rem'
+                    }}>
                       <span className="text-[#dd8a03] font-bold" style={{
                         color: '#dd8a03',
-                        fontWeight: '700',
-                      fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+                        fontWeight: '700'
                       }}>•</span>
-                      <span style={{ color: '#4a4a4a', fontSize: '0.875rem', fontWeight: '400',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{qual}</span>
+                      <span style={{ color: '#4a4a4a', fontSize: '0.875rem', fontWeight: '400' }}>{qual}</span>
                     </li>
                   ))}
                 </ul>
@@ -325,14 +321,14 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                   color: '#ffffff',
                   marginBottom: '12px',
                   fontWeight: '600',
-                  lineHeight: '1.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>How to Apply:</h2>
+                  lineHeight: '1.75rem'
+                }}>How to Apply:</h2>
                 <div className="space-y-2 text-sm" style={{
                   display: 'flex',
                   flexDirection: 'column',
                   gap: '8px',
-                  fontSize: '0.875rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                  fontSize: '0.875rem'
+                }}>
                   {job.contact_email && (
                     <p className="flex items-center gap-2" style={{
                       display: 'flex',
@@ -341,8 +337,8 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                       color: '#ffffff',
                       fontSize: '0.875rem',
                       fontWeight: '400',
-                      lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                      lineHeight: '1.25rem'
+                    }}>
                       <Mail className="w-4 h-4" style={{ width: '16px', height: '16px', color: '#ffffff' }} />
                       <span className="font-semibold" style={{ fontWeight: '600', color: '#ffffff' }}>Email:</span> {job.contact_email}
                     </p>
@@ -355,8 +351,8 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                       color: '#ffffff',
                       fontSize: '0.875rem',
                       fontWeight: '400',
-                      lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                      lineHeight: '1.25rem'
+                    }}>
                       <Phone className="w-4 h-4" style={{ width: '16px', height: '16px', color: '#ffffff' }} />
                       <span className="font-semibold" style={{ fontWeight: '600', color: '#ffffff' }}>Phone:</span> {job.contact_phone}
                     </p>
@@ -369,8 +365,8 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                       color: '#ffffff',
                       fontSize: '0.875rem',
                       fontWeight: '400',
-                      lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                      lineHeight: '1.25rem'
+                    }}>
                       <Building className="w-4 h-4" style={{ width: '16px', height: '16px', color: '#ffffff' }} />
                       <span className="font-semibold" style={{ fontWeight: '600', color: '#ffffff' }}>Office:</span> {job.contact_office}
                     </p>
@@ -383,8 +379,8 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                       color: '#ffffff',
                       fontSize: '0.875rem',
                       fontWeight: '400',
-                      lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                      lineHeight: '1.25rem'
+                    }}>
                       <ExternalLink className="w-4 h-4" style={{ width: '16px', height: '16px', color: '#ffffff' }} />
                       <span className="font-semibold" style={{ fontWeight: '600', color: '#ffffff' }}>More Info:</span> {job.external_url}
                     </p>
@@ -395,8 +391,8 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                       color: 'rgba(255, 255, 255, 0.8)',
                       paddingTop: '4px',
                       fontWeight: '400',
-                      lineHeight: '1rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                      lineHeight: '1rem'
+                    }}>
                       Source: {job.source}
                     </p>
                   )}
@@ -429,8 +425,8 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                 color: '#ffffff',
                 marginBottom: '16px',
                 fontWeight: '600',
-                lineHeight: '1.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>More Job Resources</h2>
+                lineHeight: '1.75rem'
+              }}>More Job Resources</h2>
 
               {/* CareerLink Information */}
               <div className="mb-5 pb-4 border-b border-white/20" style={{
@@ -443,15 +439,15 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                   color: '#ffffff',
                   marginBottom: '8px',
                   fontWeight: '600',
-                  lineHeight: '1.5rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Visit CareerLink</h3>
+                  lineHeight: '1.5rem'
+                }}>Visit CareerLink</h3>
                 <p className="text-sm text-white/90 mb-2" style={{
                   fontSize: '0.875rem',
                   color: 'rgba(255, 255, 255, 0.9)',
                   marginBottom: '8px',
                   fontWeight: '400',
-                  lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                  lineHeight: '1.25rem'
+                }}>
                   For personalized career counseling and job search assistance
                 </p>
                 <div className="space-y-1 text-xs text-white/80" style={{
@@ -459,8 +455,8 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                   flexDirection: 'column',
                   gap: '4px',
                   fontSize: '0.75rem',
-                  color: 'rgba(255, 255, 255, 0.8)',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                  color: 'rgba(255, 255, 255, 0.8)'
+                }}>
                   <p className="flex items-center gap-2" style={{
                     display: 'flex',
                     alignItems: 'center',
@@ -468,11 +464,10 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                     fontSize: '0.75rem',
                     color: 'rgba(255, 255, 255, 0.8)',
                     fontWeight: '400',
-                    lineHeight: '1rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                    lineHeight: '1rem'
+                  }}>
                     <Building className="w-3 h-3" style={{ width: '12px', height: '12px', color: 'rgba(255, 255, 255, 0.8)' }} />
-                    <span style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}><span className="font-semibold" style={ fontWeight: '600', fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif' }>Location:</span> TLC Building (The Learning Center)</span>
+                    <span style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.75rem' }}><span className="font-semibold" style={{ fontWeight: '600' }}>Location:</span> TLC Building (The Learning Center)</span>
                   </p>
                   <p className="flex items-center gap-2" style={{
                     display: 'flex',
@@ -481,11 +476,10 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                     fontSize: '0.75rem',
                     color: 'rgba(255, 255, 255, 0.8)',
                     fontWeight: '400',
-                    lineHeight: '1rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                    lineHeight: '1rem'
+                  }}>
                     <Phone className="w-3 h-3" style={{ width: '12px', height: '12px', color: 'rgba(255, 255, 255, 0.8)' }} />
-                    <span style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}><span className="font-semibold" style={ fontWeight: '600', fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif' }>Phone:</span> (808) 984-3318</span>
+                    <span style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.75rem' }}><span className="font-semibold" style={{ fontWeight: '600' }}>Phone:</span> (808) 984-3318</span>
                   </p>
                   <p className="flex items-center gap-2" style={{
                     display: 'flex',
@@ -494,11 +488,10 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                     fontSize: '0.75rem',
                     color: 'rgba(255, 255, 255, 0.8)',
                     fontWeight: '400',
-                    lineHeight: '1rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                    lineHeight: '1rem'
+                  }}>
                     <Mail className="w-3 h-3" style={{ width: '12px', height: '12px', color: 'rgba(255, 255, 255, 0.8)' }} />
-                    <span style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}><span className="font-semibold" style={ fontWeight: '600', fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif' }>Email:</span> careerLK@hawaii.edu</span>
+                    <span style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.75rem' }}><span className="font-semibold" style={{ fontWeight: '600' }}>Email:</span> careerLK@hawaii.edu</span>
                   </p>
                 </div>
               </div>
@@ -515,23 +508,23 @@ export function JobDetail({ job, onBack, onHome, onWelcome, canGoBack }: JobDeta
                     color: '#ffffff',
                     marginBottom: '8px',
                     fontWeight: '600',
-                    lineHeight: '1.5rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Visit SECE Online</h3>
+                    lineHeight: '1.5rem'
+                  }}>Visit SECE Online</h3>
                   <p className="text-sm text-white/90 mb-2" style={{
                     fontSize: '0.875rem',
                     color: 'rgba(255, 255, 255, 0.9)',
                     marginBottom: '8px',
                     fontWeight: '400',
-                    lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                    lineHeight: '1.25rem'
+                  }}>
                     Student Employment & Career Experience - Browse more job opportunities online
                   </p>
                   <p className="text-xs text-white/80" style={{
                     fontSize: '0.75rem',
                     color: 'rgba(255, 255, 255, 0.8)',
                     fontWeight: '400',
-                    lineHeight: '1rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                    lineHeight: '1rem'
+                  }}>
                     Scan the QR code to visit the SECE website on your phone
                   </p>
                 </div>

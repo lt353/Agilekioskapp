@@ -250,11 +250,10 @@ export function FloorMap({
               border: 'none',
               borderRadius: '8px',
               cursor: 'pointer',
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+            }}
           >
-            <span style={{ color: '#ffffff', fontSize: '16px', fontWeight: 600,
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Floor 1</span>
+            <span style={{ color: '#ffffff', fontSize: '16px', fontWeight: 600 }}>Floor 1</span>
           </Button>
           <Button
             onClick={() => switchFloor(2)}
@@ -276,11 +275,10 @@ export function FloorMap({
               border: 'none',
               borderRadius: '8px',
               cursor: 'pointer',
-              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+            }}
           >
-            <span style={{ color: '#ffffff', fontSize: '16px', fontWeight: 600,
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Floor 2</span>
+            <span style={{ color: '#ffffff', fontSize: '16px', fontWeight: 600 }}>Floor 2</span>
           </Button>
         </div>
 
@@ -398,8 +396,8 @@ export function FloorMap({
               color: '#ffffff',
               textAlign: 'center',
               fontWeight: 500,
-              margin: 0,
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
+              margin: 0
+            }}
           >
             Touch any room on the map for more details
           </p>
@@ -423,8 +421,8 @@ export function FloorMap({
               gridTemplateColumns: 'repeat(3, 1fr)',
               columnGap: '8px',
               rowGap: '4px',
-              fontSize: '14px',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
+              fontSize: '14px'
+            }}
           >
             <div
               className="flex items-center gap-1.5"
@@ -442,8 +440,7 @@ export function FloorMap({
               ></div>
               <span
                 className="text-slate-800"
-                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
+                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px' }}
               >Faculty</span>
             </div>
             <div
@@ -462,8 +459,7 @@ export function FloorMap({
               ></div>
               <span
                 className="text-slate-800"
-                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
+                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px' }}
               >Services</span>
             </div>
             <div
@@ -482,8 +478,7 @@ export function FloorMap({
               ></div>
               <span
                 className="text-slate-800"
-                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
+                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px' }}
               >Admin</span>
             </div>
             <div
@@ -502,8 +497,7 @@ export function FloorMap({
               ></div>
               <span
                 className="text-slate-800"
-                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
+                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px' }}
               >Restroom</span>
             </div>
             <div
@@ -522,8 +516,7 @@ export function FloorMap({
               ></div>
               <span
                 className="text-slate-800"
-                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
+                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px' }}
               >Stairs</span>
             </div>
             <div
@@ -542,8 +535,7 @@ export function FloorMap({
               ></div>
               <span
                 className="text-slate-800"
-                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
+                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px' }}
               >Elevator</span>
             </div>
             <div
@@ -562,8 +554,7 @@ export function FloorMap({
               ></div>
               <span
                 className="text-slate-800"
-                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
+                style={{ color: '#1e293b', fontWeight: 600, fontSize: '14px' }}
               >Unassigned</span>
             </div>
           </div>
@@ -583,11 +574,10 @@ export function FloorMap({
             border: 'none',
             borderRadius: '8px',
             cursor: 'pointer',
-            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
+            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+          }}
         >
-          <span style={{ color: '#ffffff', fontSize: '16px', fontWeight: 600,
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+          <span style={{ color: '#ffffff', fontSize: '16px', fontWeight: 600 }}>
             Switch to List View
           </span>
         </Button>

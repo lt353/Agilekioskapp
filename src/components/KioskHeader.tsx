@@ -56,8 +56,7 @@ export function KioskHeader({
               border: 'none',
               cursor: 'pointer',
               fontSize: '14px',
-              fontWeight: '500',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+              fontWeight: '500'
             }}
           >
             Main Menu
@@ -74,8 +73,7 @@ export function KioskHeader({
               border: 'none',
               cursor: 'pointer',
               fontSize: '14px',
-              fontWeight: '500',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+              fontWeight: '500'
             }}
           >
             Start Screen
@@ -113,8 +111,7 @@ export function KioskHeader({
               color: '#ffffff',
               textTransform: 'uppercase',
               letterSpacing: '0.05em',
-              fontWeight: '600',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+              fontWeight: '600'
             }}>
               {title}
             </h1>

@@ -82,16 +82,16 @@ export function JobsListings({ onNavigate, onBack, onHome, onWelcome, canGoBack 
               color: '#004f71',
               marginBottom: '8px',
               fontWeight: '600',
-              lineHeight: '1.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+              lineHeight: '1.75rem'
+            }}>
               Available Opportunities
             </h2>
             <p className="text-sm" style={{
               fontSize: '0.875rem',
               color: '#4a4a4a',
               fontWeight: '400',
-              lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+              lineHeight: '1.25rem'
+            }}>
               Tap any job to see full details
             </p>
           </motion.div>
@@ -111,8 +111,8 @@ export function JobsListings({ onNavigate, onBack, onHome, onWelcome, canGoBack 
                 fontSize: '1.125rem',
                 color: '#6b7280',
                 fontWeight: '500',
-                lineHeight: '1.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                lineHeight: '1.75rem'
+              }}>
                 Loading job opportunities...
               </p>
             </motion.div>
@@ -133,8 +133,8 @@ export function JobsListings({ onNavigate, onBack, onHome, onWelcome, canGoBack 
                 fontSize: '1.125rem',
                 color: '#4a4a4a',
                 fontWeight: '500',
-                lineHeight: '1.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                lineHeight: '1.75rem'
+              }}>
                 {error}
               </p>
             </motion.div>
@@ -156,8 +156,8 @@ export function JobsListings({ onNavigate, onBack, onHome, onWelcome, canGoBack 
                 color: '#4a4a4a',
                 marginBottom: '8px',
                 fontWeight: '500',
-                lineHeight: '1.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                lineHeight: '1.75rem'
+              }}>
                 No job openings available at this time.
               </p>
               <p className="text-sm mt-2" style={{
@@ -165,8 +165,8 @@ export function JobsListings({ onNavigate, onBack, onHome, onWelcome, canGoBack 
                 color: '#6b7280',
                 marginTop: '8px',
                 fontWeight: '400',
-                lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                lineHeight: '1.25rem'
+              }}>
                 Check back soon or visit the career services listed on the previous screen.
               </p>
             </motion.div>
@@ -208,8 +208,8 @@ export function JobsListings({ onNavigate, onBack, onHome, onWelcome, canGoBack 
                         fontSize: '1.125rem',
                         color: '#004f71',
                         fontWeight: '600',
-                        lineHeight: '1.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                        lineHeight: '1.75rem'
+                      }}>
                         {job.title}
                       </h3>
                       <span className="text-xs bg-[#789904] text-white px-2 py-1 rounded" style={{
@@ -222,8 +222,8 @@ export function JobsListings({ onNavigate, onBack, onHome, onWelcome, canGoBack 
                         paddingBottom: '4px',
                         borderRadius: '6px',
                         fontWeight: '500',
-                        lineHeight: '1rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                        lineHeight: '1rem'
+                      }}>
                         {job.type}
                       </span>
                     </div>
@@ -231,25 +231,25 @@ export function JobsListings({ onNavigate, onBack, onHome, onWelcome, canGoBack 
                       fontSize: '0.875rem',
                       color: '#4a4a4a',
                       marginBottom: '4px',
-                      lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
-                      <span className="font-semibold" style={ fontWeight: '600', fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif' }>{job.company}</span>
+                      lineHeight: '1.25rem'
+                    }}>
+                      <span className="font-semibold" style={{ fontWeight: '600' }}>{job.company}</span>
                     </p>
                     <p className="text-xs mb-2" style={{
                       fontSize: '0.75rem',
                       color: '#4a4a4a',
                       marginBottom: '8px',
                       fontWeight: '400',
-                      lineHeight: '1rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                      lineHeight: '1rem'
+                    }}>
                       {job.location} • {job.wage}
                     </p>
                     <p className="text-sm" style={{
                       fontSize: '0.875rem',
                       color: '#4a4a4a',
                       fontWeight: '400',
-                      lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                      lineHeight: '1.25rem'
+                    }}>
                       {job.description}
                     </p>
                     <div className="mt-3 flex justify-between items-center" style={{
@@ -262,16 +262,16 @@ export function JobsListings({ onNavigate, onBack, onHome, onWelcome, canGoBack 
                         fontSize: '0.75rem',
                         color: '#6b7280',
                         fontWeight: '400',
-                        lineHeight: '1rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                        lineHeight: '1rem'
+                      }}>
                         Posted: {formatPostedDate(job.posted_date)}
                       </span>
                       <span className="text-sm" style={{
                         fontSize: '0.875rem',
                         color: '#004f71',
                         fontWeight: '500',
-                        lineHeight: '1.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                        lineHeight: '1.25rem'
+                      }}>
                         Tap for details →
                       </span>
                     </div>

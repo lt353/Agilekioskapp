@@ -131,8 +131,8 @@ export function NameSearch({ onNavigate, onBack, onHome, onWelcome, canGoBack }:
               boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
               borderRadius: '6px',
               color: '#004f71',
-              padding: '12px',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
+              padding: '12px'
+            }}
           />
         </motion.div>
 
@@ -155,8 +155,8 @@ export function NameSearch({ onNavigate, onBack, onHome, onWelcome, canGoBack }:
               fontSize: '14px',
               color: '#ffffff',
               textAlign: 'center',
-              margin: 0,
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+              margin: 0
+            }}>
               {searchQuery.trim() ? `${searchResults.length} result${searchResults.length !== 1 ? 's' : ''}` : 'Results will appear here'}
             </p>
           </div>
@@ -177,8 +177,8 @@ export function NameSearch({ onNavigate, onBack, onHome, onWelcome, canGoBack }:
                 <p className="text-xs text-[#65665c]" style={{
                   fontSize: '12px',
                   color: '#65665c',
-                  margin: 0,
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Start typing to search</p>
+                  margin: 0
+                }}>Start typing to search</p>
               </div>
             ) : searchResults.length === 0 ? (
               <div className="text-center py-4" style={{
@@ -188,13 +188,13 @@ export function NameSearch({ onNavigate, onBack, onHome, onWelcome, canGoBack }:
               }}>
                 <div className="text-2xl mb-1" style={{
                   fontSize: '24px',
-                  marginBottom: '4px',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>❌</div>
+                  marginBottom: '4px'
+                }}>❌</div>
                 <p className="text-xs text-[#65665c]" style={{
                   fontSize: '12px',
                   color: '#65665c',
-                  margin: 0,
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>No results found</p>
+                  margin: 0
+                }}>No results found</p>
               </div>
             ) : (
               <div className="space-y-2" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -235,8 +235,8 @@ export function NameSearch({ onNavigate, onBack, onHome, onWelcome, canGoBack }:
                         color: '#004f71',
                         marginBottom: '4px',
                         fontWeight: '600',
-                        margin: '0 0 4px 0',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                        margin: '0 0 4px 0'
+                      }}>
                         {room.occupant || room.name}
                       </h3>
                       {room.occupant && room.name && (
@@ -244,16 +244,16 @@ export function NameSearch({ onNavigate, onBack, onHome, onWelcome, canGoBack }:
                           fontSize: '12px',
                           color: '#65665c',
                           marginBottom: '4px',
-                          margin: '0 0 4px 0',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{room.name}</p>
+                          margin: '0 0 4px 0'
+                        }}>{room.name}</p>
                       )}
                       <div className="flex items-center gap-2 text-xs text-[#65665c]" style={{
                         display: 'flex',
                         alignItems: 'center',
                         gap: '8px',
                         fontSize: '12px',
-                        color: '#65665c',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                        color: '#65665c'
+                      }}>
                         <span className="bg-[#004f71] text-white px-2 py-0.5 rounded" style={{
                           backgroundColor: '#004f71',
                           color: '#ffffff',
@@ -263,8 +263,7 @@ export function NameSearch({ onNavigate, onBack, onHome, onWelcome, canGoBack }:
                           paddingBottom: '2px',
                           borderRadius: '4px',
                           fontSize: '12px',
-                          fontWeight: '500',
-                        fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+                          fontWeight: '500'
                         }}>Room {room.number}</span>
                         <span className="bg-[#789904] text-white px-2 py-0.5 rounded" style={{
                           backgroundColor: '#789904',
@@ -275,8 +274,7 @@ export function NameSearch({ onNavigate, onBack, onHome, onWelcome, canGoBack }:
                           paddingBottom: '2px',
                           borderRadius: '4px',
                           fontSize: '12px',
-                          fontWeight: '500',
-                        fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+                          fontWeight: '500'
                         }}>Floor {room.floor}</span>
                       </div>
                     </Card>
@@ -341,8 +339,8 @@ export function NameSearch({ onNavigate, onBack, onHome, onWelcome, canGoBack }:
                           border: '2px solid #65665c',
                           cursor: 'pointer',
                           fontWeight: '600',
-                          transform: pressedKey === key ? 'scale(0.95)' : 'scale(1)',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
+                          transform: pressedKey === key ? 'scale(0.95)' : 'scale(1)'
+                        }}
                       >
                         {key}
                       </button>
@@ -382,8 +380,8 @@ export function NameSearch({ onNavigate, onBack, onHome, onWelcome, canGoBack }:
                       border: '2px solid #e63f51',
                       cursor: 'pointer',
                       fontWeight: '600',
-                      transform: pressedKey === 'Clear' ? 'scale(0.95)' : 'scale(1)',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
+                      transform: pressedKey === 'Clear' ? 'scale(0.95)' : 'scale(1)'
+                    }}
                   >
                     Clear
                   </button>
@@ -412,8 +410,8 @@ export function NameSearch({ onNavigate, onBack, onHome, onWelcome, canGoBack }:
                       border: '2px solid #789904',
                       cursor: 'pointer',
                       fontWeight: '600',
-                      transform: pressedKey === 'Space' ? 'scale(0.95)' : 'scale(1)',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}
+                      transform: pressedKey === 'Space' ? 'scale(0.95)' : 'scale(1)'
+                    }}
                   >
                     Space
                   </button>

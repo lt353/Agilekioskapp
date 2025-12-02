@@ -78,8 +78,8 @@ export function SearchResults({ query, onNavigate, onBack, onHome, onWelcome, ca
               fontSize: '1.25rem',
               color: '#ffffff',
               fontWeight: '500',
-              lineHeight: '1.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+              lineHeight: '1.75rem'
+            }}>
               {results.length} result{results.length !== 1 ? 's' : ''} for "{query.query}"
             </p>
           </div>
@@ -112,22 +112,22 @@ export function SearchResults({ query, onNavigate, onBack, onHome, onWelcome, ca
             }}>
               <span className="text-6xl" style={{
                 fontSize: '3.75rem',
-                lineHeight: '1',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>❌</span>
+                lineHeight: '1'
+              }}>❌</span>
             </div>
             <p className="text-2xl text-[#004f71] mb-3" style={{
               fontSize: '1.5rem',
               color: '#004f71',
               marginBottom: '12px',
               fontWeight: '600',
-              lineHeight: '2rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>No results found</p>
+              lineHeight: '2rem'
+            }}>No results found</p>
             <p className="text-lg text-[#65665c]" style={{
               fontSize: '1.125rem',
               color: '#65665c',
               fontWeight: '400',
-              lineHeight: '1.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>Try a different search term</p>
+              lineHeight: '1.75rem'
+            }}>Try a different search term</p>
           </motion.div>
         ) : (
           <div className="space-y-4" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -175,23 +175,23 @@ export function SearchResults({ query, onNavigate, onBack, onHome, onWelcome, ca
                         color: '#004f71',
                         marginBottom: '8px',
                         fontWeight: '600',
-                        lineHeight: '1.75rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{room.occupant}</h3>
+                        lineHeight: '1.75rem'
+                      }}>{room.occupant}</h3>
                       {room.department && (
                         <p className="text-base text-[#65665c] mb-2" style={{
                           fontSize: '1rem',
                           color: '#65665c',
                           marginBottom: '8px',
                           fontWeight: '400',
-                          lineHeight: '1.5rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>{room.department}</p>
+                          lineHeight: '1.5rem'
+                        }}>{room.department}</p>
                       )}
                       <div className="flex items-center gap-3 text-sm text-[#aca39a]" style={{
                         display: 'flex',
                         alignItems: 'center',
                         gap: '12px',
-                        fontSize: '0.875rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                        fontSize: '0.875rem'
+                      }}>
                         <span className="bg-[#004f71] text-white px-3 py-1 rounded" style={{
                           backgroundColor: '#004f71',
                           color: '#ffffff',
@@ -201,8 +201,7 @@ export function SearchResults({ query, onNavigate, onBack, onHome, onWelcome, ca
                           paddingBottom: '4px',
                           borderRadius: '6px',
                           fontSize: '0.875rem',
-                          fontWeight: '500',
-                        fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+                          fontWeight: '500'
                         }}>Room {room.number}</span>
                         <span className="bg-[#789904] text-white px-3 py-1 rounded" style={{
                           backgroundColor: '#789904',
@@ -213,8 +212,7 @@ export function SearchResults({ query, onNavigate, onBack, onHome, onWelcome, ca
                           paddingBottom: '4px',
                           borderRadius: '6px',
                           fontSize: '0.875rem',
-                          fontWeight: '500',
-                        fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+                          fontWeight: '500'
                         }}>Floor {room.floor}</span>
                       </div>
                     </div>
@@ -223,8 +221,8 @@ export function SearchResults({ query, onNavigate, onBack, onHome, onWelcome, ca
                       fontSize: '1.875rem',
                       marginLeft: '16px',
                       fontWeight: '600',
-                      lineHeight: '2.25rem',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'}}>
+                      lineHeight: '2.25rem'
+                    }}>
                       →
                     </div>
                   </div>

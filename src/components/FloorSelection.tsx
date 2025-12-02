@@ -60,8 +60,7 @@ export function FloorSelection({ onNavigate, onBack, onHome, onWelcome, canGoBac
             fontSize: '1.25rem',
             color: '#ffffff',
             textAlign: 'center',
-            fontWeight: '500',
-            fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+            fontWeight: '500'
           }}>
             Select a floor to view the interactive map
           </p>
@@ -91,8 +90,7 @@ export function FloorSelection({ onNavigate, onBack, onHome, onWelcome, canGoBac
                 color: '#ffffff',
                 textAlign: 'center',
                 marginBottom: '24px',
-                fontWeight: '700',
-                fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+                fontWeight: '700'
               }}>Floor 1</h3>
               <div className="grid grid-cols-2 gap-x-4 gap-y-3 text-base text-white/90" style={{
                 display: 'grid',
@@ -100,8 +98,7 @@ export function FloorSelection({ onNavigate, onBack, onHome, onWelcome, canGoBac
                 columnGap: '16px',
                 rowGap: '12px',
                 fontSize: '1rem',
-                color: 'rgba(255, 255, 255, 0.9)',
-                fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+                color: 'rgba(255, 255, 255, 0.9)'
               }}>
                 {floor1Rooms.map((room, index) => (
                   <div key={index} className="flex items-start gap-2" style={{
@@ -150,8 +147,7 @@ export function FloorSelection({ onNavigate, onBack, onHome, onWelcome, canGoBac
                 color: '#ffffff',
                 textAlign: 'center',
                 marginBottom: '24px',
-                fontWeight: '700',
-                fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+                fontWeight: '700'
               }}>Floor 2</h3>
               <div className="grid grid-cols-2 gap-x-4 gap-y-3 text-base text-white/90" style={{
                 display: 'grid',
@@ -159,8 +155,7 @@ export function FloorSelection({ onNavigate, onBack, onHome, onWelcome, canGoBac
                 columnGap: '16px',
                 rowGap: '12px',
                 fontSize: '1rem',
-                color: 'rgba(255, 255, 255, 0.9)',
-                fontFamily: 'Montserrat, ui-sans-serif, system-ui, sans-serif'
+                color: 'rgba(255, 255, 255, 0.9)'
               }}>
                 {floor2Rooms.map((room, index) => (
                   <div key={index} className="flex items-start gap-2" style={{

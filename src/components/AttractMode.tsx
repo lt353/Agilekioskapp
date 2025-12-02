@@ -428,7 +428,7 @@ export function AttractMode({ onTouch }: AttractModeProps) {
       </AnimatePresence>
 
       {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 z-10" style={{
+      <div className="absolute bottom-8 flex gap-2 z-10" style={{
         position: 'absolute',
         bottom: '32px',
         left: '0',

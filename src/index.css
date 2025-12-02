@@ -287,8 +287,13 @@
     letter-spacing: inherit;
     color: inherit;
     opacity: 1;
-    background-color: #0000;
+    /* background-color: #0000; */ /* Commented out: causes buttons to be invisible on Android when CSS doesn't load properly */
     border-radius: 0;
+  }
+
+  /* Ensure buttons have a visible default background for Android compatibility */
+  button {
+    background-color: transparent;
   }
 
   ::file-selector-button {
